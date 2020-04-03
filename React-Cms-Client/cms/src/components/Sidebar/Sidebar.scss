@@ -1,0 +1,84 @@
+//app-sidebar
+.app-sidebar {
+    width: 230px;
+    box-shadow: rgba(136, 152, 170, 0.15) 0px 0px 2rem 0px !important;
+    -webkit-box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15) !important;
+
+    &__img {
+        text-align: center;
+        margin: 0px auto;
+        padding: 21px 10px;
+
+        a {
+            white-space: nowrap;
+        }
+
+        img {
+            max-height: 4rem;
+        }
+    }
+
+    .sidebar-menu {
+        margin-bottom: 0;
+        padding: 0;
+        list-style: none;
+
+        li {}
+
+        &__item {
+            text-decoration: none;
+            border-top: 1px solid #dae0ef;
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            padding: 1.4rem 2.4rem;
+            font-weight: 300;
+            color: #70768e;
+            font-size: 1.4rem;
+            -webkit-transition: all 0.1s;
+            -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+
+            svg {
+                -webkit-box-flex: 0;
+                flex: 0 0 auto;
+                line-height: 1.5rem;
+                color: #70768e;
+                font-size: 1.5rem;
+                margin-left: 0.5rem;
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+            }
+
+            span {
+                margin-left: 2rem;
+                -webkit-box-flex: 1;
+                flex: 1 1 auto;
+            }
+
+            &:hover {
+                color: #f8f9fe;
+                background: #00c3ed;
+
+                svg {
+                    -webkit-box-flex: 0;
+                    flex: 0 0 auto;
+                    line-height: 1.5rem;
+                    color: #f8f9fe;
+                }
+            }
+        }
+
+        &__item.active {
+            .fa-angle-right {
+                -webkit-transition: 0.3s;
+                transition: 0.3s;
+                -webkit-transform: rotate(90deg);
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+//End app-sidebar

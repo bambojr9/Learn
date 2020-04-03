@@ -1,0 +1,44 @@
+[
+    {
+        "id":1,
+        "tieuDe":"Bác sĩ Mỹ: Bầu trời đang sụp đổ",
+        "trichDan":"Tôi hứa sẽ không để con chị phải chết vì căn bệnh này, Cornelia Griggs, một bác sĩ nhi khoa, trấn an người hàng xóm Karen ở New York.",
+        "noiDung":"Hai tuần trước, những đứa trẻ nhà Cornelia và Karen còn cùng nhau ăn pizza và xem phim hoạt hình, chạy qua chạy lại. Đó là trước khi  trở thành xu hướng nhằm ngăn Covid-19 lan rộng ở Mỹ.",
+        "anh":"https://i-vnexpress.vnecdn.net/2020/03/20/bac-si-my-bau-troi-sup-do-3-jp-1426-7499-1584677623.jpg"
+    },
+    {
+        "id":2,
+        "tieuDe":"Bệnh viện dã chiến Củ Chi sẽ dùng robot lau sàn",
+        "trichDan":"Bệnh viện dã chiến Củ Chi phối hợp Bệnh viện Quân dân Y miền Đông thử nghiệm sản phẩm",
+        "noiDung":"ảng thiết kế chi tiết sản phẩm hiện đã hoàn tất. Sau khi được các chuyên gia kiểm soát nhiễm khuẩn của thành phố nhận xét, nhóm nghiên cứu sẽ tiến hành cho in 3D để ra sản phẩm đầu tiên. Bệnh viện dã chiến Củ Chi sẽ thử nghiệm trước khi ứng dụng nhân rộng tại các bệnh viện chuyên điều trị bệ.",
+        "anh":"https://i-suckhoe.vnecdn.net/2020/03/07/vne-anh3-2774-1583594826.jpg"
+    },
+    {
+        "id":3,
+        "tieuDe":"Phát hiện 72 đột biến chưa từng biết đến gây ung thư vú ",
+        "trichDan":"Giới khoa học vừa phát hiện thêm 72 đột biến liên quan đến ung thư vú, nâng số đột biến làm tăng nguy cơ bệnh lên gần 180.",
+        "noiDung":"ừ Đại học Cambridge (Anh) dẫn đầu nhóm tác giả chia sẻ với CNN. Sau khi tiến hành phân tích ADN, các nhà khoa học phát hiện 65 đột biến mới phổ biến ở bệnh nhân ung thư vú và bảy loại khác dẫn đến ung thư vú âm tính với thụ thể estrogen không đáp ứng với liệu pháp hormone như thuốc .",
+        "anh":"https://i-suckhoe.vnecdn.net/2017/03/06/ung-thu-4806-1488764486.jpg"
+    },
+    {
+        "id":4,
+        "tieuDe":"5 mẹo giúp người bệnh ung thư lạc quan sống khỏe",
+        "trichDan":" bạn cần phải đem theo thiết bị y tế như kim tiêm hay cổng thông mạch máu IV, cần lưu ý rằng những thứ này có thể gây báo động khi kiểm tra an ninh hải quan. Vì vậy, nhớ yêu .",
+        "noiDung":"quốc gia có thể yêu cầu bạn tiêm văcxin chống lại một số bệnh trước khi đặt chân đến nước họ. Hãy vào Google tìm hiểu kỹ thông tin này và nhờ bác sĩ tư vấn thêm bởi có một số loại văcxin không được khuyến khích những người bị một số loại ung thư nhất định hoặc bệnh nhân đang hóa trị, x.",
+        "anh":"https://i1-suckhoe.vnecdn.net/2017/04/24/albino-girl-snow-white-nariyana-siberia-15-1493017758.jpg?w=180&h=108&q=100&dpr=2&fit=crop&s=vak_gHtjdG9G-6X9Rn-Inw"
+    },
+    {
+        "id":5,
+        "tieuDe":"Lính biên phòng 'ăn lán, ngủ rừng' chống dịch",
+        "trichDan":"Hai tháng kiểm soát đường biên, Nguyễn Đắc Đạt cùng đồng đội nhiều khi phải chia nhau nghỉ lưng trong cống thoát nước, trước khi đư.",
+        "noiDung":"ối mở ở cột mốc 1302 rộng chừng chục mét, nối liền thôn Khe Và, thị trấn Bình Liêu, Quảng Ninh với bản La, xã Đông Mân, Linh Minh, Quảng Tây (Trung Quốc). Nếu không kiểm soát chặt chẽ, lối mở này sẽ trở thành nơi người xuất nhập cảnh trái phép qua lại thường xuyên, có thể đem.",
+        "anh":"https://i-vnexpress.vnecdn.net/2020/03/20/le-thanh-hai-vne-6695-15833947-8979-5124-1584701880_r_500x300.jpg"
+    },
+    {
+        "id":6,
+        "tieuDe":"Khuyến cáo du học sinh cân nhắc việc về nước",
+        "trichDan":"TBộ Giáo dục và Đào tạo khuyến cáo du học sinh cân nhắc kỹ các rủi ro khi quay trở về Việt Nam, nên ở trong nhà, hạn chế tối đa ra ngoài.",
+        "noiDung":"TTrước tình hình Covid-19 diễn biến phức tạp, nhiều du học sinh quyết định về nước và được xác định mắc Covid-19, ngày 19/3 Bộ Giáo dục và Đào tạo khuyến cáo du học sinh cần tuân thủ tuyệt đối quy tắc phòng dịch ở nước sở tại và bám sát nội dung khuyến cáo của đại sứ quán Việt Na.",
+        "anh":"https://i-vnexpress.vnecdn.net/2020/03/09/anh-bac-si-5946-1583752945.jpg"
+    }
+]
