@@ -3,7 +3,7 @@ import { createStore } from "redux";
 const noteInitialState = {
   isEdit: true,
   editItem: {},
-  isAdd: false
+  isAdd: false,
 };
 const allreducer = (state = noteInitialState, action) => {
   switch (action.type) {
@@ -21,7 +21,7 @@ const allreducer = (state = noteInitialState, action) => {
     case "EDIT_DATA":
       noteData.child(action.getItem.id).update({
         noteTitle: action.getItem.noteTitle,
-        noteContent: action.getItem.noteContent
+        noteContent: action.getItem.noteContent,
       });
       console.log("Du lieu sua thanh cong " + JSON.stringify(action.getItem));
       return { ...state, editItem: {} };

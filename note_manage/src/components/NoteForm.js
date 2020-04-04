@@ -6,7 +6,7 @@ class NoteForm extends Component {
     this.state = {
       noteTitle: "",
       noteContent: "",
-      id: ""
+      id: "",
     };
   }
   // on change get Value
@@ -17,7 +17,7 @@ class NoteForm extends Component {
     // console.log(name);
     // console.log(value);
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
   // Lay value  DATA tu` State
@@ -56,7 +56,7 @@ class NoteForm extends Component {
       this.setState({
         noteTitle: this.props.editItem.noteTitle,
         noteContent: this.props.editItem.noteContent,
-        id: this.props.editItem.id
+        id: this.props.editItem.id,
       });
     }
   }
@@ -124,7 +124,7 @@ class NoteForm extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     editItem: state.editItem,
-    addStatus: state.isAdd
+    addStatus: state.isAdd,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -132,20 +132,20 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     addDataStore: (getItem) => {
       dispatch({
         type: "ADD_DATA",
-        getItem
+        getItem,
       });
     },
     editDataStore: (getItem) => {
       dispatch({
         type: "EDIT_DATA",
-        getItem
+        getItem,
       });
     },
     changeEditStatus: () => {
       dispatch({
-        type: "CHANGE_EDIT_STATUS"
+        type: "CHANGE_EDIT_STATUS",
       });
-    }
+    },
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(NoteForm);
