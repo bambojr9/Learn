@@ -5,7 +5,7 @@ class NoteList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      DataFireBase: []
+      DataFireBase: [],
     };
   }
 
@@ -22,11 +22,11 @@ class NoteList extends Component {
         arrayData.push({
           id: key,
           noteTitle: noteTitle,
-          noteContent: noteContent
+          noteContent: noteContent,
         });
       });
       this.setState({
-        DataFireBase: arrayData
+        DataFireBase: arrayData,
       });
     });
   }

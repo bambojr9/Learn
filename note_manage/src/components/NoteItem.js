@@ -64,28 +64,28 @@ class NoteItem extends Component {
 }
 const mapStateToProps = (state, ownProps) => {
   return {
-    isEdit: state.isEdit
+    isEdit: state.isEdit,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     changeEditStatus: () => {
       dispatch({
-        type: "CHANGE_EDIT_STATUS"
+        type: "CHANGE_EDIT_STATUS",
       });
     },
     getEditData: (editObject) => {
       dispatch({
         type: "GET_EDIT_DATA",
-        editObject
+        editObject,
       });
     },
     getDeleteData: (deleteId) => {
       dispatch({
         type: "DELETE_DATA",
-        deleteId
+        deleteId,
       });
-    }
+    },
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(NoteItem);

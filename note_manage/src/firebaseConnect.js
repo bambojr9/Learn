@@ -8,7 +8,7 @@ var firebaseConfig = {
   storageBucket: "notereact99.appspot.com",
   messagingSenderId: "497677191317",
   appId: "1:497677191317:web:e16a60c95f0947e795339c",
-  measurementId: "G-S06W4HW3L1"
+  measurementId: "G-S06W4HW3L1",
 };
 // Initialize Firebase
 //   firebase.initializeApp(firebaseConfig);

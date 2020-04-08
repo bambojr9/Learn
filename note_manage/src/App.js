@@ -21,7 +21,7 @@ class App extends Component {
   // START SHOWFORM
   showForm = () => {
     if (this.props.isEdit) {
-      return <NoteForm></NoteForm>;
+      return <NoteForm> </NoteForm>;
     }
   };
   //End SHOWFORM
@@ -30,7 +30,7 @@ class App extends Component {
     connectDb.push({
       noteTitle: "Ghi chu so 3",
       noteContent: "Noi dung thu 3",
-      id: 3
+      id: 3,
     });
     console.log("da them noi dung");
   };
@@ -49,44 +49,42 @@ class App extends Component {
           type="button"
           className="btn btn-primary"
         >
-          Click de push db
-        </button>
+          Click de push db{" "}
+        </button>{" "}
         <button
           onClick={() => this.removeDb("-M3HKrebuv7ZRw7bS-c_")}
           type="button"
           className="btn btn-primary"
         >
-          Click de Remove db
-        </button>
+          Click de Remove db{" "}
+        </button>{" "}
         <div className="container">
           <div className="row">
-            <NoteList> </NoteList>
-            {this.showForm()}
-            {/* C1:  ADD DATA */}
+            <NoteList> </NoteList> {this.showForm()} {/* C1:  ADD DATA */}{" "}
             {/* <NoteForm
-              getData={(item) => {
-                this.getData(item);
-              }}
-            ></NoteForm> */}
-            {/* End  C1 :  ADD DATA */}
-          </div>
-        </div>
+                      getData={(item) => {
+                        this.getData(item);
+                      }}
+                    ></NoteForm> */}{" "}
+            {/* End  C1 :  ADD DATA */}{" "}
+          </div>{" "}
+        </div>{" "}
       </div>
     );
   }
 }
 const mapStateToProps = (state, ownProps) => {
   return {
-    isEdit: state.isEdit
+    isEdit: state.isEdit,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     changeEditStatus: () => {
       dispatch({
-        type: "CHANGE_EDIT_STATUS"
+        type: "CHANGE_EDIT_STATUS",
       });
-    }
+    },
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);

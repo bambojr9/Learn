@@ -1,0 +1,171 @@
+.header {
+  &__box1 {
+    .navbar {
+      padding: 1rem 0;
+
+      .form-control {
+        font-size: 1.4rem;
+        padding: 1.5rem;
+
+        &:focus {
+          border: 1px solid grey;
+          box-shadow: 0 0 0 0;
+        }
+      }
+
+      button {
+        font-size: 1.5rem;
+      }
+
+      .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 1.6rem;
+
+        &:first-child {
+          padding-left: 0;
+        }
+      }
+
+      .nav-item:hover {
+        .nav-link {
+          color: #2879fe;
+        }
+      }
+    }
+  }
+
+  &__box2 {
+    padding: 2rem 0;
+    border-bottom: 1px solid #e9e7e7;
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-nav {
+      flex-direction: row;
+
+      .nav-item {
+        margin-left: 3rem;
+        align-items: center;
+        display: flex;
+
+        .tel-info {
+          margin-right: 3rem;
+          font-size: 1.4rem;
+
+          p {
+            margin-bottom: 0;
+            display: flex;
+            justify-content: flex-end;
+            font-size: 2rem;
+            font-weight: 500;
+            line-height: 1.2;
+          }
+        }
+
+        .nav-link {
+          font-size: 2rem;
+          display: flex;
+          align-items: center;
+
+          span {
+            font-weight: 400;
+            font-size: 1.4rem;
+          }
+
+          &__text {
+            color: #191919;
+            margin-left: .5rem;
+          }
+
+          svg {
+            color: #2879fe;
+
+            transition: all .3s;
+          }
+
+          &:hover {
+
+            svg {
+              color: rgb(100, 199, 194);
+              transition: all .3s;
+            }
+          }
+        }
+      }
+
+      .account-details {
+        display: inline-flex;
+        align-items: center;
+
+        .nav-link {
+          color: #2879fe;
+
+          &:hover {
+            span {
+              color: #191919;
+              transition: all .3s;
+            }
+          }
+        }
+
+      }
+
+
+
+    }
+  }
+
+  &__box3 {
+    padding: 2rem 0;
+
+    .collections {
+      list-style: none;
+      display: flex;
+
+      .nav-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-radius: .2rem;
+        margin-right: 5px;
+
+
+        .nav-link {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          color: #191919;
+          font-weight: 400;
+          transition: all .33s;
+
+          svg {
+            margin: 0 auto;
+            margin-bottom: 1rem;
+          }
+        }
+
+        &:hover {
+          background: #2879fe;
+
+          .nav-link {
+            color: #fff;
+          }
+
+          path {
+            fill: #fff;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

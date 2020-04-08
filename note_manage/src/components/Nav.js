@@ -52,21 +52,21 @@ class Nav extends Component {
 }
 const mapStateToProps = (state, ownProps) => {
   return {
-    isEdit: state.isEdit
+    isEdit: state.isEdit,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     changeEditStatus: () => {
       dispatch({
-        type: "CHANGE_EDIT_STATUS"
+        type: "CHANGE_EDIT_STATUS",
       });
     },
     changeAddStatus: () => {
       dispatch({
-        type: "CHANGE_ADD_STATUS"
+        type: "CHANGE_ADD_STATUS",
       });
-    }
+    },
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);

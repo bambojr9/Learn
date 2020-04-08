@@ -1,0 +1,11 @@
+// @import "slick-carousel/slick/slick.css";
+// @import "slick-carousel/slick/slick-theme.css";
+@import "./Reset.css";
+@import "~bootstrap/scss/bootstrap";
+@import "./components/Base/base";
+
+//components
+@import "./components/Base/typogaphy";
+@import "./components/Slide/Slideshow";
+@import "./components/Header/Header";
+@import "./components/Shopify/Shopify";

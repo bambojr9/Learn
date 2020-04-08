@@ -28,6 +28,7 @@ export default class Add extends Component {
     item.product_price = this.state.product_price;
     item.image = this.state.image;
     this.props.getItem(item);
+    //addProductData
     addProductData(
       this.state.product_name,
       this.state.product_price,
