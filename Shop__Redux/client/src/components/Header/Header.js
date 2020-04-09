@@ -59,7 +59,6 @@ export default class Header extends Component {
                         Blog
                       </NavLink>
                     </li>
-
                     <li className="nav-item">
                       <NavLink
                         activeStyle={{
@@ -99,29 +98,35 @@ export default class Header extends Component {
               <ul className="navbar-nav navbar-options">
                 <li className="nav-item">
                   <div className="tel-info">
-                    <p>CALL US: +999-8888-7777</p>
-                    from 8:00 to 21:00 (Mon-Sun) FREE by United States
+                    <p> CALL US: +999 - 8888 - 7777 </p>
+                    from 8: 00 to 21: 00(Mon - Sun) FREE by United States
                   </div>
                 </li>
                 <li className="nav-item account-details">
                   <NavLink className="nav-link" to="/account/login">
-                    <span>Sign In</span>
+                    <span> Sign In </span>
                   </NavLink>
-                  <span style={{ margin: "0 .3rem" }}>/</span>
+                  <span
+                    style={{
+                      margin: "0 .3rem",
+                    }}
+                  >
+                    /
+                  </span>
                   <NavLink className="nav-link" to="/account/register">
-                    <span>Register</span>
+                    <span> Register </span>
                   </NavLink>
                 </li>
                 <li className="nav-item ">
                   <NavLink className="nav-link" to="/2">
                     <FontAwesomeIcon icon={faHeart} />
-                    <span className="nav-link__text">WISHLIST</span>
+                    <span className="nav-link__text"> WISHLIST </span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" to="3">
                     <FontAwesomeIcon icon={faCartPlus} />
-                    <span className="nav-link__text">MY CART</span>
+                    <span className="nav-link__text"> MY CART </span>
                   </NavLink>
                 </li>
               </ul>
@@ -144,7 +149,7 @@ export default class Header extends Component {
                         fill="#999999"
                       ></path>
                     </svg>
-                    <span>Women</span>
+                    <span> Women </span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -161,7 +166,7 @@ export default class Header extends Component {
                         fill="#999999"
                       ></path>
                     </svg>
-                    <span>Men</span>
+                    <span> Men </span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -178,7 +183,7 @@ export default class Header extends Component {
                         fill="#999999"
                       ></path>
                     </svg>
-                    <span>Accessories</span>
+                    <span> Accessories </span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -195,7 +200,7 @@ export default class Header extends Component {
                         fill="#999999"
                       ></path>
                     </svg>
-                    <span>Shoes</span>
+                    <span> Shoes </span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -212,7 +217,7 @@ export default class Header extends Component {
                         fill="#999999"
                       ></path>
                     </svg>
-                    <span>New Arrivals</span>
+                    <span> New Arrivals </span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -229,7 +234,7 @@ export default class Header extends Component {
                         fill="#999999"
                       ></path>
                     </svg>
-                    <span>Clearence</span>
+                    <span> Clearence </span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -246,7 +251,7 @@ export default class Header extends Component {
                         fill="#999999"
                       ></path>
                     </svg>
-                    <span>Special Offers</span>
+                    <span> Special Offers </span>
                   </NavLink>
                 </li>
                 <li className="nav-item">
@@ -263,7 +268,7 @@ export default class Header extends Component {
                         fill="#999999"
                       ></path>
                     </svg>
-                    <span>Gift Card</span>
+                    <span> Gift Card </span>
                   </NavLink>
                 </li>
               </ul>
