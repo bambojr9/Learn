@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Shopify from './components/Shopify/Shopify';
 import Demo from './components/Demo/Demo';
+import Test from './dulieu/Test';
 // import Product from "./components/Product/Product";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 				{/* <Product></Product> */}
 			</section>
 			<Demo></Demo>
+			<Test></Test>
 		</Router>
 	);
 }
