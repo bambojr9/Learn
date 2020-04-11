@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import dulieujson from './dulieu.json';
+import dulieujson from '../dulieu/dulieu.json';
 
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 
@@ -18,8 +18,10 @@ function Test(props) {
 			</div>
 			<div className="mt-5">
 				<div className="container">
+					{/* duyet mang lay id  */}
 					{dulieujson.map((value) => {
 						if (value.id === img) {
+							//neu bang state luc dau thi` ok
 							return (
 								<div className="row">
 									{value.url.map((item) => (

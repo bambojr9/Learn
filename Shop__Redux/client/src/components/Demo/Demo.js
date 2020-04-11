@@ -2,7 +2,7 @@ import React from "react";
 import _ from "lodash";
 import styled from "styled-components";
 import { Checkbox } from "antd";
-import Love from "../Love/Love";
+import Love from "./Love";
 
 const DemoWrapper = styled.div`
   display: flex;

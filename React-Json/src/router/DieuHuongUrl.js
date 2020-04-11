@@ -9,7 +9,7 @@ export default class DieuHuongUrl extends Component {
     return (
       <div>
         <Route exact path="/Home" component={Home}></Route>{" "}
-        <Route path="/tin" component={News}></Route>{" "}
+        <Route exact path="/tin" component={News}></Route>{" "}
         <Route
           path="/tin-tuc-chi-tiet/:slug.:id.html"
           component={NewsDetail}
