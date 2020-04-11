@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import dulieujson from '../dulieu/dulieu.json';
+import dulieujson from '../../dulieu/dulieu.json';
 
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 

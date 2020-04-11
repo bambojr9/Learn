@@ -1,0 +1,21 @@
+.service {
+  &__box {
+    display: flex;
+    &--icon {
+      font-size: 3rem;
+      color: #20c997;
+    }
+    &--description {
+      padding-left: 2rem;
+      .title {
+        color: #28a745;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      p {
+        font-size: 1.4rem;
+        color: #777777;
+      }
+    }
+  }
+}
