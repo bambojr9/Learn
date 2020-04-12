@@ -1,17 +1,25 @@
 .service {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  border-top: .5px solid #17a2b8;
+
   &__box {
     display: flex;
+
     &--icon {
       font-size: 3rem;
       color: #20c997;
     }
+
     &--description {
       padding-left: 2rem;
+
       .title {
         color: #28a745;
         font-size: 1.5rem;
         font-weight: 600;
       }
+
       p {
         font-size: 1.4rem;
         color: #777777;
