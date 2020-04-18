@@ -4,7 +4,7 @@ import dulieujson from '../../../dulieu/dulieu.json';
 import CardItem from '../../cpn/CardItem';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-function Shopify2(props) {
+function Collection2(props) {
 	const [ImgId, setImgId] = useState(1);
 
 	function handleClick(id) {
@@ -16,7 +16,7 @@ function Shopify2(props) {
 		// Ktra Ton tai Data
 		if (dulieujson) {
 			//  duyet mang lay id
-			return dulieujson.map((value) => {
+			return dulieujson.data.map((value) => {
 				//so sanh id trong Data voi id cua State imgID
 				if (value.id === ImgId) {
 					return (
@@ -42,7 +42,7 @@ function Shopify2(props) {
 									{value.url.map((item) => (
 										<CardItem
 											src={item}
-											onClick={(imgId) => handleClick(value.id)}
+											onClick={(findId) => handleClick(value.id)}
 										></CardItem>
 									))}
 								</Carousel>
@@ -74,47 +74,27 @@ function Shopify2(props) {
 	//end carousel
 	return (
 		<Router>
-			<section className="shopify shopify2">
+			<section className="collection collection2">
 				<div className="container">
-					<div className="shopify__nav">
+					<div className="collection__nav">
 						<ul className="nav justify-content-center">
-							<li className="nav-item">
-								<NavLink
-									onClick={(id) => handleClick(1)}
-									exact
-									to="#"
-									className="nav-link "
-								>
+							<li onClick={(id) => handleClick(1)} className="nav-item">
+								<NavLink exact to="#" className="nav-link ">
 									Sale
 								</NavLink>
 							</li>
-							<li className="nav-item">
-								<NavLink
-									onClick={(id) => handleClick(2)}
-									exact
-									to="#"
-									className="nav-link"
-								>
+							<li onClick={(id) => handleClick(2)} className="nav-item">
+								<NavLink exact to="#" className="nav-link">
 									ACCESSORIES
 								</NavLink>
 							</li>
-							<li className="nav-item">
-								<NavLink
-									onClick={(id) => handleClick(3)}
-									exact
-									to="#"
-									className="nav-link"
-								>
+							<li onClick={(id) => handleClick(3)} className="nav-item">
+								<NavLink exact to="#" className="nav-link">
 									WOMEN
 								</NavLink>
 							</li>
-							<li className="nav-item">
-								<NavLink
-									onClick={(id) => handleClick(4)}
-									exact
-									to="#"
-									className="nav-link"
-								>
+							<li onClick={(id) => handleClick(4)} className="nav-item">
+								<NavLink exact to="#" className="nav-link">
 									Mens
 								</NavLink>
 							</li>
@@ -127,4 +107,4 @@ function Shopify2(props) {
 	);
 }
 
-export default Shopify2;
+export default Collection2;

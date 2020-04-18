@@ -1,4 +1,4 @@
-.shopify {
+.collection {
   margin-bottom: 3rem;
 
   &__nav {
@@ -117,7 +117,7 @@
     }
 
     &:hover {
-      .shopify__product--description {
+      .collection__product--description {
         margin-top: -6.6rem;
         -webkit-transition: all 0.2s;
         transition: all 0.2s;
@@ -134,17 +134,17 @@
   }
 }
 
-.shopify2 {
+.collection2 {
   .container {
     padding-left: 0;
     padding-right: 0;
 
-    .shopify__product {
+    .collection__product {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
 
       &:hover {
-        .shopify__product--img {
+        .collection__product--img {
           img {
             box-shadow: -1px -10px 4px 0px #ff6347, -4px -13px 20px 0px #ffdab9,
               -19px 6px 20px 0px #b0e0e6;
