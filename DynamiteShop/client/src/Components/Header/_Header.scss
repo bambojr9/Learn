@@ -1,3 +1,106 @@
-p {
-    color: blue
+.header-bar {
+  background-color: #0e243c;
+  //branding
+  .branding {
+    padding: 2rem 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    &__logo {
+      -webkit-box-ordinal-group: 2;
+      order: 1;
+      -webkit-box-flex: 1;
+      flex: 1;
+    }
+    &__ope {
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      svg {
+        color: #ef524a;
+        font-size: 4.2rem;
+        line-height: 4.2rem;
+        padding-right: 1rem;
+      }
+      p {
+        font-size: 1.6rem;
+        font-weight: 700;
+        margin-bottom: 0;
+        color: #fff;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &__oHour {
+      -webkit-box-flex: 1;
+      flex: 1;
+    }
+    &__contact {
+      -webkit-box-ordinal-group: 3;
+      order: 2;
+    }
+  }
+  //navigation
+  .navigation {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 1rem 0;
+    .main-nav {
+      list-style: none;
+      display: -webkit-box;
+      display: flex;
+      margin-bottom: 0;
+      &__item:hover {
+        .main-nav__link {
+          background-color: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.1);
+          color: #ef524a;
+        }
+      }
+      &__link {
+        text-transform: uppercase;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #fff;
+        padding: 0.8rem 1.2rem;
+        margin: 1.2rem 0.6rem;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    .mini-nav {
+      margin-bottom: 0;
+      list-style: none;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      &__item {
+        margin-left: 1.5rem;
+        &:hover .mini-nav__link {
+          background-color: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.1);
+          span {
+            color: #ef524a;
+          }
+        }
+      }
+      &__link {
+        color: #fff;
+        font-weight: 600;
+        text-decoration: none;
+        padding: 1rem;
+        svg {
+          font-size: 2rem;
+        }
+        span {
+          font-size: 1.6rem;
+          padding-left: 0.5rem;
+        }
+      }
+    }
+  }
 }

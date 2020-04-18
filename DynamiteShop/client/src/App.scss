@@ -1,12 +1,8 @@
 @import './Reset.css';
 @import './components/Base/base';
-
+@import './Components//Base/animations';
 //components
 
 @import './components/Base/typogaphy';
 @import './components/Header/Header';
-
-// @import './components/Home/_Home';
-p {
-    color: red
-}
+@import './Components/Home/Home';
