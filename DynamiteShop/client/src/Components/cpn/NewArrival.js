@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
-import dulieujson from '../../../dulieu/dulieu.json';
-import CardItem from '../../cpn/CardItem';
+import dulieujson from '../../dulieu/dulieu.json';
+import CardItem from './ProductItem';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 function Collection2(props) {

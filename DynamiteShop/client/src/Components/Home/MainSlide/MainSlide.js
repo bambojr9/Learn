@@ -42,12 +42,11 @@ function MainSlide(props) {
         <Carousel
           swipeable={false}
           draggable={false}
-          showDots={true}
           responsive={responsive}
           ssr={true} // means to render carousel on server-side.
           infinite={true}
-          //   autoPlay={props.deviceType !== 'mobile' ? true : false}
-          //   autoPlaySpeed={2555}
+          // autoPlay={props.deviceType !== 'mobile' ? true : false}
+          // autoPlaySpeed={2555}
           keyBoardControl={true}
           customTransition="all .5"
           transitionDuration={500}
@@ -103,10 +102,10 @@ function MainSlide(props) {
           {/* item3  */}
           <div className="main-slideshow__item main-slideshow__item-3">
             <div className="main-slideshow__textbox">
-              <p className="product">Hoddies</p>
-              <p className="seasons">Cool / Warm /cosy</p>
+              <p className="product">SNEAKERS </p>
+              <p className="seasons">BOMBASTIC COLORS </p>
               <Link className="btn" to="/">
-                Check out new collection!
+              HURRY UP & GRAB YOUR PAIR! 
               </Link>
             </div>
             <div className="layer-wrap layer-1">

@@ -12,23 +12,20 @@ function Footer(props) {
 								<div className="text-box__content">
 									<ul className="list-group">
 										<li className="list-group__item">
-											<Link to="#">Women</Link>
+											<Link to="#">T-Shirts</Link>
 										</li>
 										<li className="list-group__item">
-											<Link to="#">Men</Link>
+											<Link to="#">Hoddies</Link>
 										</li>
 										<li className="list-group__item">
-											<Link to="#">Accessories</Link>
+											<Link to="#">Footwear</Link>
 										</li>
 										<li className="list-group__item">
-											<Link to="#">Shoes</Link>
+											<Link to="#">Digital Goods</Link>
 										</li>
 										<li className="list-group__item">
-											<Link to="#">New Arrivals</Link>
-										</li>
-										<li className="list-group__item">
-											<Link to="#">Clearence</Link>
-										</li>
+											<Link to="#">SALE</Link>
+										</li>								
 									</ul>
 								</div>
 							</div>

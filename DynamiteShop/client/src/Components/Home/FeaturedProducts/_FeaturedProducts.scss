@@ -1,0 +1,37 @@
+.featured-products {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .heading-secondary {
+    &__icon {
+      &::before {
+        left: 43rem;
+      }
+      &::after {
+        right: 43rem;
+      }
+    }
+  }
+  .productItem {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+  //button slide
+  .react-multiple-carousel__arrow {
+    border-radius: 0;
+    background-color: #fff;
+    border: 1px solid #ef524a;
+    &::before {
+      color: #ef524a;
+    }
+    &--left {
+      left: 1.5rem;
+    }
+    &--right {
+      right: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,186 @@
+@media (min-width: 1368px) and (max-width: 1599.98px) {
+  .main-slideshow {
+    .layer-wrap {
+      .img-fluid {
+        max-width: 95%;
+      }
+    }
+    &__item-1 {
+      .layer-1 {
+        left: 6%;
+      }
+      .layer-2 {
+        left: 16%;
+      }
+      .layer-3 {
+        right: 16%;
+      }
+      .layer-4 {
+        right: 6%;
+      }
+    }
+    &__item-2 {
+      .main-slideshow__textbox {
+        left: 12%;
+      }
+      .layer-1 {
+        right: 32%;
+      }
+      .layer-2 {
+        right: 25%;
+      }
+      .layer-3 {
+        right: 18%;
+      }
+      .layer-4 {
+        right: 11%;
+      }
+    }
+    &__item-3 {
+      .main-slideshow__textbox {
+        right: 12%;
+      }
+      .layer-1 {
+        left: 2%;
+      }
+      .layer-2 {
+        left: 11%;
+      }
+      .layer-3 {
+        left: 24%;
+      }
+    }
+  }
+}
+@media (min-width: 1200px) and (max-width: 1367.98px) {
+  .main-slideshow {
+    &__item {
+      height: 44rem;
+    }
+    &__textbox {
+      .product {
+        font-size: 9.5rem;
+      }
+      .seasons {
+        font-size: 4rem;
+      }
+    }
+    .layer-wrap {
+      .img-fluid {
+        max-width: 85%;
+      }
+    }
+    &__item-1 {
+      .layer-1 {
+        left: 3%;
+      }
+      .layer-2 {
+        left: 13%;
+      }
+      .layer-3 {
+        right: 13%;
+      }
+      .layer-4 {
+        right: 3%;
+      }
+    }
+    &__item-2 {
+      .main-slideshow__textbox {
+        left: 9%;
+      }
+      .layer-1 {
+        right: 29%;
+      }
+      .layer-2 {
+        right: 19%;
+      }
+      .layer-3 {
+        right: 10%;
+      }
+      .layer-4 {
+        right: -1%;
+      }
+    }
+    &__item-3 {
+      .main-slideshow__textbox {
+        right: 6%;
+      }
+      .layer-1 {
+        left: 2%;
+      }
+      .layer-2 {
+        left: 11%;
+      }
+      .layer-3 {
+        left: 24%;
+      }
+    }
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .main-slideshow {
+        &__item {
+          height: 44rem;
+        }
+        &__textbox {
+          .product {
+            font-size: 9.5rem;
+          }
+          .seasons {
+            font-size: 4rem;
+          }
+        }
+        .layer-wrap {
+          .img-fluid {
+            max-width: 85%;
+          }
+        }
+        &__item-1 {
+          .layer-1 {
+            left: 3%;
+          }
+          .layer-2 {
+            left: 13%;
+          }
+          .layer-3 {
+            right: 13%;
+          }
+          .layer-4 {
+            right: 3%;
+          }
+        }
+        &__item-2 {
+          .main-slideshow__textbox {
+            left: 9%;
+          }
+          .layer-1 {
+            right: 29%;
+          }
+          .layer-2 {
+            right: 19%;
+          }
+          .layer-3 {
+            right: 10%;
+          }
+          .layer-4 {
+            right: -1%;
+          }
+        }
+        &__item-3 {
+          .main-slideshow__textbox {
+            right: 6%;
+          }
+          .layer-1 {
+            left: 2%;
+          }
+          .layer-2 {
+            left: 11%;
+          }
+          .layer-3 {
+            left: 24%;
+          }
+        }
+      }
+    }
+ }

@@ -35,7 +35,7 @@ function Header(props) {
             </div>
           </div>
         </div>
-        <nav className="navigation">
+        <nav className="navigation d-none d-xl-flex">
           <div className="container d-flex justify-content-between">
             <ul className="main-nav">
               <li className="main-nav__item">
