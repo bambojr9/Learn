@@ -1,24 +1,3 @@
-// import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faStar } from '@fortawesome/free-solid-svg-icons';
-// import NewArrival from '../../cpn/NewArrival';
-// function NewArrival1(props) {
-//   return (
-//     <section className="new-arrival">
-//       <div className="container">
-//         <div className="heading-secondary">
-//           <h2 className="heading-secondary__title">NEW ARRIVAL</h2>
-//           <div className="heading-secondary__icon">
-//             <FontAwesomeIcon icon={faStar} />
-//           </div>
-//         </div>
-//       </div>
-//       <NewArrival></NewArrival>
-//     </section>
-//   );
-// }
-
-// export default NewArrival1;
 import React, { useState } from 'react';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -75,20 +54,26 @@ function NewArrival(props) {
   };
   //carousel
   const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 4,
-      slidesToSlide: 3, // optional, default to 1.
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 768 },
       items: 3,
-      slidesToSlide: 2, // optional, default to 1.
+    },
+     landscape: {
+      breakpoint: { max: 767.98, min: 464 },
+      items: 2,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
-      slidesToSlide: 1, // optional, default to 1.
     },
   };
   //end carousel
