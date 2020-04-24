@@ -40,16 +40,17 @@ function FeaturedProducts(props) {
           </div>
         </div>
         <Carousel
+         arrows={true}
           swipeable={true}
           draggable={true}
           // showDots={true}
           responsive={responsive}
           ssr={true} // means to render carousel on server-side.
           infinite={true}
-          // autoPlay={props.deviceType !== 'mobile' ? true : false}
-          // autoPlaySpeed={5000}
+          autoPlay={props.deviceType !== 'mobile' ? true : false}
+          autoPlaySpeed={5000}
           keyBoardControl={true}
-          customTransition="all .5"
+          // customTransition="all .5"
           transitionDuration={500}
           containerClass="carousel-container"
           deviceType={props.deviceType}
