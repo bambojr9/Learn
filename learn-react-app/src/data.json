@@ -1,0 +1,13 @@
+[
+  { "id": 1, "color": "red", "isChecked": false },
+  { "id": 2, "color": "pink", "isChecked": false },
+  { "id": 3, "color": "green", "isChecked": false },
+  { "id": 4, "color": "green", "isChecked": false },
+  { "id": 5, "color": "blue", "isChecked": false },
+  { "id": 6, "color": "blue", "isChecked": false },
+  { "id": 7, "color": "blue", "isChecked": false },
+  { "id": 8, "color": "yellow", "isChecked": false },
+  { "id": 9, "color": "yellow", "isChecked": false },
+  { "id": 10, "color": "yellow", "isChecked": false },
+  { "id": 11, "color": "yellow", "isChecked": false }
+]
