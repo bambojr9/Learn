@@ -6,6 +6,7 @@ import ProductItem from '../../cpn/ProductItem';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 //
+
 function FeaturedProducts(props) {
   const responsive = {
     superLargeDesktop: {

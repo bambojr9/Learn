@@ -9,12 +9,12 @@ function HeaderMobile(props) {
   return (
     <div
       className={
-        'mobile-navigation-wrap ' + (props.isEditStatusClass ? 'Active' : null)
+        'mobile-navigation-wrap ' + (props.EditStatusClass.isEditStatusClass ? 'Active' : null)
       }
     >
-      <Link onClick={toggleClass}  to="/" className="mobile-navigation-button ">
+      <span onClick={toggleClass}  to="/" className="mobile-navigation-button ">
         <span className="mobile-navigation-button__icon ">&nbsp;</span>
-      </Link>
+      </span>
       <ul className="mobile-navigation ">
         <li className="mobile-navigation__item">
           <Link className="mobile-navigation__link" to="/">
@@ -57,7 +57,7 @@ function HeaderMobile(props) {
 }
 const mapStateToProps = (state, ownProps) => {
   return {
-    isEditStatusClass: state.isEditStatusClass,
+    EditStatusClass: state.EditStatusClass,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {

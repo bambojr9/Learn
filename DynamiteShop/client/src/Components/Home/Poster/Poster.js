@@ -9,15 +9,15 @@ function Poster(props) {
           <div className="row">
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="poster__item poster__item-1">
-                <Link>
+                <Link to="#">
                   <h3 className="poster__title">SEASONAL SALE</h3>
                   <p className="poster__content">Winter Collection -50% OFF</p>
-                </Link>
+                </Link >
               </div>
             </div>
             <div className="col-lg-4 col-md-6 mb-4">
               <div className="poster__item poster__item-2">
-                <Link>
+                <Link to="#">
                   <h3 className="poster__title">NEW FOOTWEAR</h3>
                   <p className="poster__content">Spring / Summer 2020</p>
                 </Link>
@@ -25,7 +25,7 @@ function Poster(props) {
             </div>
             <div className="col-lg-4 col-md-6 offset-md-3 offset-lg-0 mb-4">
               <div className="poster__item poster__item-3">
-                <Link>
+                <Link to="#">
                   <h3 className="poster__title">T-SHIRTS</h3>
                   <p className="poster__content">New Trendy Prints</p>
                 </Link>

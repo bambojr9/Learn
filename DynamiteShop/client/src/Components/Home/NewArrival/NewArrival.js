@@ -18,11 +18,12 @@ function NewArrival(props) {
     // Ktra Ton tai Data
     if (dulieujson) {
       //  duyet mang lay id
-      return dulieujson.data.map((value) => {
+      return dulieujson.data.map((value, key) => {
         //so sanh id trong Data voi id cua State imgID
         if (value.id === ImgId) {
           return (
             <Carousel
+              key={key}
               arrows={true}
               swipeable={true}
               draggable={true}
@@ -40,8 +41,9 @@ function NewArrival(props) {
               deviceType={props.deviceType}
               itemClass="carousel-item-padding-40-px"
             >
-              {value.url.map((item) => (
+              {value.url.map((item, key) => (
                 <ProductItem
+                  key={key}
                   src={item}
                   onClick={(findId) => handleClick(value.id)}
                 ></ProductItem>
@@ -67,7 +69,7 @@ function NewArrival(props) {
       breakpoint: { max: 1024, min: 768 },
       items: 3,
     },
-     landscape: {
+    landscape: {
       breakpoint: { max: 767.98, min: 464 },
       items: 2,
     },

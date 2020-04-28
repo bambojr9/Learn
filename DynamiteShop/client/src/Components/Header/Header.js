@@ -143,9 +143,9 @@ function Header(props) {
           </li>
         </div>
         {/* button navigation  */}
-        <Link onClick={toggleClass}  className="button-mobile-navigation" to="/">
+        <span onClick={toggleClass}  className="button-mobile-navigation" to="/">
           <div className="lines-button"></div>
-        </Link>
+        </span>
       </div>
       {/* overlay  */}
       <div

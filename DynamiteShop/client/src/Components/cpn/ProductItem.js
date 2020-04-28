@@ -10,8 +10,8 @@ function ProductItem(props) {
       {/* <div className="col-md-3 "> */}
         <div className="productItem">
           <Link to="#" className="productItem__img">
-            {/* <img src={props.src} alt="" className="img-fluid" /> */}
-            <img
+            <img src={props.src} alt="" className="img-fluid" />
+            {/* <img
               src={T_Shirt_0101}
               alt="T_Shirt_0101"
               className="img-fluid productItem__img--01"
@@ -20,7 +20,7 @@ function ProductItem(props) {
               src={T_Shirt_0102}
               alt="T_Shirt_0102"
               className="img-fluid productItem__img--02"
-            />
+            /> */}
           </Link>
           <div className="productItem__content">
             <h4 className="productItem__content--title">
