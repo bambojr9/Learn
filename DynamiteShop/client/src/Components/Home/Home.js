@@ -8,7 +8,7 @@ import TotalSale from './TotalSale/TotalSale';
 function Home(props) {
   return (
     <div className="page-home-wrap">
-      {/* <MainSlide></MainSlide> */}
+      <MainSlide></MainSlide>
       <FeaturedProducts></FeaturedProducts>
       <Poster></Poster>
       <NewArrival></NewArrival>
