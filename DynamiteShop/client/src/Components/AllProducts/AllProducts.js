@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Footer from '../Footer/Footer';
 import ProductItem from '../cpn/ProductItem';
 import { connect } from 'react-redux';
 // import { actFetchData } from '../../actions/actFetchData';
-import { actFetchDataRequest } from '../../actions/actFetchData';
+import { actFetchDataAllProductsRequest } from '../../actions/actFetchData';
 class AllProducts extends Component {
   constructor(props) {
     super(props);
@@ -12,22 +11,23 @@ class AllProducts extends Component {
     };
   }
   componentDidMount() {
-    this.props.fetchDatabase();
+    this.props.fetchDatabaseAllProducts();
   }
   log = () => {
-    console.log(' \n ' + JSON.stringify(this.props.Database) + ' \n');
+    console.log(' \n ' + JSON.stringify(this.props.DbAllProducts) + ' \n');
   };
 
   showAllProducts = () => {
-    if (this.props.Database !== null) {
-      const DB = this.props.Database;
-      const DB1 = DB.map((value) =>
-        value.FeaturedProducts.forEach((product) => console.log(product))
-      );
-
-      // const FeaturedProducts = this.props.Database.map(
-      //   (value) => value.FeaturedProducts
-      // );
+    if (this.props.DbAllProducts !== null) {
+      return this.props.DbAllProducts.map((value, key) => (
+        <ProductItem
+          key={key}
+          src={value.src}
+          name={value.name}
+          price={value.price}
+          oldPrice={value.oldPrice}
+        ></ProductItem>
+      ));
     }
   };
   render() {
@@ -41,6 +41,7 @@ class AllProducts extends Component {
               reprehenderit et. Sapiente tempora, architecto quaerat dolore
               ipsam fuga distinctio aliquid libero rem. Quod!
             </p>
+
             {this.showAllProducts()}
           </div>
         </div>
@@ -51,13 +52,13 @@ class AllProducts extends Component {
 }
 const mapStateToProps = (state, ownProps) => {
   return {
-    Database: state.Database,
+    DbAllProducts: state.DbAllProducts,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchDatabase: () => {
-      dispatch(actFetchDataRequest());
+    fetchDatabaseAllProducts: () => {
+      dispatch(actFetchDataAllProductsRequest());
     },
   };
 };

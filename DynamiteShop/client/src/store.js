@@ -1,12 +1,14 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import EditStatusClass from './Reducer/EditStatusClass';
-import Database from './Reducer/Database';
+import DbFeatureProducts from './Reducer/DbFeatureProducts';
+import DbAllProducts from './Reducer/DbAllProducts';
 import thunk from 'redux-thunk'
 
 
 const allReducer = combineReducers({
   EditStatusClass: EditStatusClass,
-  Database:Database
+  DbFeatureProducts:DbFeatureProducts,
+  DbAllProducts
 });
 
 // store quan li  Reducer  (  quan li  state &  Action)
