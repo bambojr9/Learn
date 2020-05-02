@@ -3,6 +3,8 @@ import ProductItem from '../cpn/ProductItem';
 import { connect } from 'react-redux';
 // import { actFetchData } from '../../actions/actFetchData';
 import { actFetchDataAllProductsRequest } from '../../actions/actFetchData';
+import TitlePage from '../TitlePage/TitlePage';
+import SidebarLeft from '../SidebarLeft/SidebarLeft';
 class AllProducts extends Component {
   constructor(props) {
     super(props);
@@ -20,32 +22,35 @@ class AllProducts extends Component {
   showAllProducts = () => {
     if (this.props.DbAllProducts !== null) {
       return this.props.DbAllProducts.map((value, key) => (
-        <ProductItem
-          key={key}
-          src={value.src}
-          name={value.name}
-          price={value.price}
-          oldPrice={value.oldPrice}
-        ></ProductItem>
+        <div className="col-4">
+          <ProductItem
+            key={key}
+            src={value.src}
+            name={value.name}
+            price={value.price}
+            oldPrice={value.oldPrice}
+          ></ProductItem>
+        </div>
       ));
     }
   };
   render() {
     return (
       <div>
-        <div className="container">
-          <div className="col-md-4">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit,
-              dolorum obcaecati quod hic reiciendis repellendus fuga
-              reprehenderit et. Sapiente tempora, architecto quaerat dolore
-              ipsam fuga distinctio aliquid libero rem. Quod!
-            </p>
-
-            {this.showAllProducts()}
+        <TitlePage></TitlePage>
+        <div className="main">
+          <div className="container">
+            <div className="row">
+              <div className="col-3">
+                <SidebarLeft></SidebarLeft>
+              </div>
+              <div className="col-9">
+                <div className="row">{this.showAllProducts()}</div>
+              </div>
+            </div>
           </div>
+          <p onClick={() => this.log()}>----------CHECK DATA-----------</p>
         </div>
-        <p onClick={() => this.log()}>----------CHECK DATA-----------</p>
       </div>
     );
   }
