@@ -10,6 +10,7 @@ class AllProducts extends Component {
     super(props);
     this.state = {
       data: null,
+      statusFilter: true,
     };
   }
   componentDidMount() {
@@ -18,33 +19,117 @@ class AllProducts extends Component {
   log = () => {
     console.log(' \n ' + JSON.stringify(this.props.DbAllProducts) + ' \n');
   };
-
+  changeStatusFilter = () => {
+    this.setState({
+      // statusFilter: !this.state.statusFilter,
+      statusFilter: false,
+    });
+  };
+  // showAllProducts = () => {
+  //   console.log(JSON.stringify(this.props.GetDataFilter) + '\n\n\n\n\nx');
+  // };
   showAllProducts = () => {
-    if (this.props.DbAllProducts !== null) {
-      return this.props.DbAllProducts.map((value, key) => (
-        <div className="col-md-4">
-          <ProductItem
-            key={key}
-            src={value.src}
-            name={value.name}
-            price={value.price}
-            oldPrice={value.oldPrice}
-          ></ProductItem>
-        </div>
-      ));
+    if (this.state.statusFilter === true) {
+      if (
+        this.props.DbAllProducts === undefined ||
+        this.props.DbAllProducts.length !== 0
+      ) {
+        return this.props.DbAllProducts.map((value, key) => (
+          <div className="col-md-4">
+            <ProductItem
+              key={key}
+              src={value.src}
+              name={value.name}
+              price={value.price}
+              oldPrice={value.oldPrice}
+            ></ProductItem>
+          </div>
+        ));
+      } else {
+        return <h1>Product does not Exist</h1>;
+      }
+    }
+    if (this.state.statusFilter === false) {
+      if (
+        this.props.GetDataFilter === undefined ||
+        this.props.GetDataFilter.length !== 0
+      ) {
+        return this.props.GetDataFilter.map((value, key) => (
+          <div className="col-md-4">
+            <ProductItem
+              key={key}
+              src={value.src}
+              name={value.name}
+              price={value.price}
+              oldPrice={value.oldPrice}
+            ></ProductItem>
+          </div>
+        ));
+      } else {
+        return <h1>Product does not Exist</h1>;
+      }
     }
   };
+
   render() {
+    // let result = [];
+    // this.props.DbAllProducts.forEach((item) => {
+    //   if (
+    //     item.price >= this.props.GetPriceFilter[0] &&
+    //     item.price <= this.props.GetPriceFilter[1]
+    //   ) {
+    //     result.push(item);
+    //   }
+    // });
+
+    // const showAllProducts = () => {
+    //   if (result !== null) {
+    //     return result.map((value, key) => (
+    //       <div className="col-md-4">
+    //         <ProductItem
+    //           key={key}
+    //           src={value.src}
+    //           name={value.name}
+    //           price={value.price}
+    //           oldPrice={value.oldPrice}
+    //         ></ProductItem>
+    //       </div>
+    //     ));
+    //   }
+    // };
+    // const hand = () => {
+    //   if (this.state.statusFilter === true) {
+    //     if (result === undefined || result.length !== 0) {
+    //       return result.map((value, key) => (
+    //         <div className="col-md-4">
+    //           <ProductItem
+    //             key={key}
+    //             src={value.src}
+    //             name={value.name}
+    //             price={value.price}
+    //             oldPrice={value.oldPrice}
+    //           ></ProductItem>
+    //         </div>
+    //       ));
+    //     } else {
+    //       return <h1>Product does not Exist</h1>;
+    //     }
+    //   }
+    // };
+
     return (
       <div>
         <TitlePage></TitlePage>
         <div className="main">
           <div className="container">
             <div className="row">
-              <div className="col-md-3">
-                <SidebarLeft></SidebarLeft>
+              <div className="col-xl-3 col-md-12 sidebar ">
+                <SidebarLeft
+                  changeStatusFilter={() => this.changeStatusFilter()}
+                  data={this.props.DbAllProducts}
+                ></SidebarLeft>
               </div>
-              <div className="col-lg-9">
+              <div className="col-xl-9 col-md-12">
                 <div className="row">{this.showAllProducts()}</div>
               </div>
             </div>
@@ -58,6 +143,8 @@ class AllProducts extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     DbAllProducts: state.DbAllProducts,
+    GetPriceFilter: state.GetPriceFilter,
+    GetDataFilter: state.GetDataFilter,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -65,6 +152,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchDatabaseAllProducts: () => {
       dispatch(actFetchDataAllProductsRequest());
     },
+    getDataFilter: (getDataFilter) => {
+      dispatch({
+        type: 'GET_DATA_FILTER',
+        getDataFilter,
+      });
+    },
   };
 };
+
 export default connect(mapStateToProps, mapDispatchToProps)(AllProducts);

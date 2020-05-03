@@ -1,4 +1,8 @@
+.sidebar {
+  border-right: 1px solid rgba(204, 204, 204, 0.5);
+}
 .sidebar-left {
+  width: 95%;
   .title {
     font-size: 2rem;
     color: #273a4f;
@@ -54,13 +58,14 @@
   .price-filter {
     margin-top: 3rem;
 
-    &__slider {}
+    &__slider {
+    }
 
     .btn {
       margin-top: 2rem;
       background-color: #ef524a;
       border-radius: 1px;
-      padding: .6rem 1.6rem;
+      padding: 0.6rem 1.6rem;
       border: 0;
 
       span {
@@ -73,5 +78,39 @@
         background-color: #dc3545;
       }
     }
+  }
+  .ant-slider-track {
+    background-color: #ef524a;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1199.98px) {
+  .sidebar {
+    display: block;
+    width: 100%;
+    position: relative;
+  }
+  .sidebar-left.Active {
+    width: 0;
+    overflow-x: hidden;
+  }
+  .sidebar-left {
+    padding: 3rem;
+    width: 40rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 9999;
+    border-right: 1px solid rgba(204, 204, 204, 0.5);
+  }
+  .toggle-sidebar {
+    position: absolute;
+    padding: 1rem 1.5rem;
+    border: 1px solid grey;
+    top: 40%;
+    left: 40rem;
+    cursor: pointer;
   }
 }
