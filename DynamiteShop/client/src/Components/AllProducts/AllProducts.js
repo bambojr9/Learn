@@ -22,7 +22,7 @@ class AllProducts extends Component {
   showAllProducts = () => {
     if (this.props.DbAllProducts !== null) {
       return this.props.DbAllProducts.map((value, key) => (
-        <div className="col-4">
+        <div className="col-md-4">
           <ProductItem
             key={key}
             src={value.src}
@@ -41,10 +41,10 @@ class AllProducts extends Component {
         <div className="main">
           <div className="container">
             <div className="row">
-              <div className="col-3">
+              <div className="col-md-3">
                 <SidebarLeft></SidebarLeft>
               </div>
-              <div className="col-9">
+              <div className="col-lg-9">
                 <div className="row">{this.showAllProducts()}</div>
               </div>
             </div>
