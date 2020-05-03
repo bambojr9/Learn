@@ -5,11 +5,13 @@
     font-weight: 600;
     margin-bottom: 2rem;
   }
+
   .searchBar {
     margin-bottom: 4rem;
 
     .search {
       position: relative;
+
       input[type='search'] {
         width: 100%;
         padding: 0.9rem 1.5rem;
@@ -17,6 +19,7 @@
         color: #777777;
         background-color: #fcfcfc;
       }
+
       svg {
         position: absolute;
         top: 1.1rem;
@@ -24,22 +27,50 @@
       }
     }
   }
+
   .category {
     ul {
       list-style: none;
     }
+
     .product-category {
       .children {
         margin-left: 20px;
       }
+
       &__item {
         margin-bottom: 1rem;
       }
+
       &__link {
         text-decoration: none;
         color: #777777;
         font-weight: 500;
         font-size: 1.6rem;
+      }
+    }
+  }
+
+  .price-filter {
+    margin-top: 3rem;
+
+    &__slider {}
+
+    .btn {
+      margin-top: 2rem;
+      background-color: #ef524a;
+      border-radius: 1px;
+      padding: .6rem 1.6rem;
+      border: 0;
+
+      span {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      &:hover {
+        background-color: #dc3545;
       }
     }
   }

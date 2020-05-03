@@ -1,12 +1,15 @@
-import * as Types from '../constants/ActionTypes'
+import * as Types from '../constants/ActionTypes';
 
-const GetPriceFilterInitialState = {}
-${export }const GetPriceFilter = (state = GetPriceFilterInitialState, action) => {
-    switch (action.type) {
-        case Types.GET_PRICE_FILTER:
-            return state
-       
-        default:
-            return state
-    }
-}
+const GetPriceFilterInitialState = [0, 2000];
+const GetPriceFilter = (state = GetPriceFilterInitialState, action) => {
+	switch (action.type) {
+		case Types.GET_PRICE_FILTER:
+			state = action.payload;
+			return [...state];
+
+		default:
+			return state;
+	}
+};
+
+export default GetPriceFilter;
