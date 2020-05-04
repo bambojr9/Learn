@@ -151,7 +151,7 @@ function Header(props) {
       <div
         className={
           'mobile-sticky-header-overlay ' +
-          (props.isEditStatusClass ? 'Active' : null)
+          (props.EditStatusClass.isEditStatusClass ? 'Active' : null) + " "+ ( props.EditStatusClass.isEditStatusClassSIDEBAR ? 'Active' : null)
         }
       ></div>
     </div>
@@ -159,7 +159,7 @@ function Header(props) {
 }
 const mapStateToProps = (state, ownProps) => {
   return {
-    isEditStatusClass: state.isEditStatusClass,
+    EditStatusClass: state.EditStatusClass,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {

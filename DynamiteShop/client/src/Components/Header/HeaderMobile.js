@@ -22,7 +22,7 @@ function HeaderMobile(props) {
           </Link>
         </li>
         <li className="mobile-navigation__item">
-          <Link className="mobile-navigation__link" to="/5">
+          <Link className="mobile-navigation__link" to="/All-Products">
             All products
           </Link>
         </li>

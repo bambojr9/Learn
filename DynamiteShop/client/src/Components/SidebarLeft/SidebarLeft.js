@@ -10,7 +10,6 @@ class SidebarLeft extends Component {
     super(props);
     this.state = {
       disabled: false,
-      result: [],
     };
   }
   handleDisabledChange = (disabled) => {
@@ -35,84 +34,96 @@ class SidebarLeft extends Component {
     });
     this.props.getDataFilter(result);
   };
+  toggleClassa = () => {
+    this.props.changeEditStatusClassSidebar();
+  };
 
   render() {
     const { disabled } = this.state;
     return (
-      <aside className="sidebar-left">
-        <div className="searchBar">
-          <h3 className="title">Search</h3>
-          <div className="search">
-            <input type="search" placeholder="Search products..." />
-            <Link to="/">
-              <FontAwesomeIcon icon={faSearch} />
+      <aside
+        className={
+          'sidebar ' +
+          (this.props.EditStatusClass.isEditStatusClassSIDEBAR
+            ? 'Active'
+            : null)
+        }
+      >
+        <div className="sidebar-left">
+          <div className="searchBar">
+            <h3 className="title">Search</h3>
+            <div className="search">
+              <input type="search" placeholder="Search products..." />
+              <Link to="/">
+                <FontAwesomeIcon icon={faSearch} />
+              </Link>
+            </div>
+          </div>
+
+          <div className="category">
+            <h3 className="title">CATEGORIES</h3>
+            <ul className="product-category">
+              <li className="product-category__item">
+                <Link className="product-category__link" to="/">
+                  Clothes & Footwear
+                </Link>
+                <ul className="children">
+                  <li className="product-category__item">
+                    <Link className="product-category__link" to="/">
+                      Footwear
+                    </Link>
+                  </li>
+                  <li className="product-category__item">
+                    <Link className="product-category__link" to="/">
+                      Hoodies
+                    </Link>
+                  </li>
+                  <li className="product-category__item">
+                    <Link className="product-category__link" to="/">
+                      T-Shirts
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li className="product-category__item">
+                <Link className="product-category__link" to="/">
+                  Digital goods
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="price-filter">
+            <h3 className="title">FILTER BY PRICE</h3>
+            <div className="price-filter__slider">
+              <Slider
+                onChange={(value) => this.handleValueChange(value)}
+                range
+                defaultValue={[0, 2000]}
+                disabled={disabled}
+              />
+              Disabled:
+              <Switch
+                size="small"
+                checked={disabled}
+                onChange={this.handleDisabledChange}
+              />
+              <span className="float-right">
+                Price: ${this.props.GetPriceFilter[0]} - $
+                {this.props.GetPriceFilter[1]}
+              </span>
+            </div>
+            <Link
+              onClick={(event) => this.handleClick(event)}
+              to="/"
+              className="btn"
+            >
+              <span>Filter</span>
             </Link>
           </div>
+          <span onClick={() => this.toggleClassa()} className="toggle-sidebar">
+            <FontAwesomeIcon icon={faSlidersH} />
+          </span>
         </div>
-
-        <div className="category">
-          <h3 className="title">CATEGORIES</h3>
-          <ul className="product-category">
-            <li className="product-category__item">
-              <Link className="product-category__link" to="/">
-                Clothes & Footwear
-              </Link>
-              <ul className="children">
-                <li className="product-category__item">
-                  <Link className="product-category__link" to="/">
-                    Footwear
-                  </Link>
-                </li>
-                <li className="product-category__item">
-                  <Link className="product-category__link" to="/">
-                    Hoodies
-                  </Link>
-                </li>
-                <li className="product-category__item">
-                  <Link className="product-category__link" to="/">
-                    T-Shirts
-                  </Link>
-                </li>
-              </ul>
-            </li>
-            <li className="product-category__item">
-              <Link className="product-category__link" to="/">
-                Digital goods
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div className="price-filter">
-          <h3 className="title">FILTER BY PRICE</h3>
-          <div className="price-filter__slider">
-            <Slider
-              onChange={(value) => this.handleValueChange(value)}
-              range
-              defaultValue={[0, 2000]}
-              disabled={disabled}
-            />
-            Disabled:
-            <Switch
-              size="small"
-              checked={disabled}
-              onChange={this.handleDisabledChange}
-            />
-            <span className="float-right">
-              Price: ${this.props.GetPriceFilter[0]} - $
-              {this.props.GetPriceFilter[1]}
-            </span>
-          </div>
-          <Link
-            onClick={(event) => this.handleClick(event)}
-            to="/"
-            className="btn"
-          >
-            <span>Filter</span>
-          </Link>
-        </div>
-        <span className="toggle-sidebar">
-          <FontAwesomeIcon icon={faSlidersH} />
-        </span>
       </aside>
     );
   }
@@ -120,6 +131,7 @@ class SidebarLeft extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     GetPriceFilter: state.GetPriceFilter,
+    EditStatusClass: state.EditStatusClass,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -134,6 +146,11 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       dispatch({
         type: 'GET_DATA_FILTER',
         getDataFilter,
+      });
+    },
+    changeEditStatusClassSidebar: () => {
+      dispatch({
+        type: 'CHANGE_EDIT_STATUS_CLASS_SIDEBAR',
       });
     },
   };
