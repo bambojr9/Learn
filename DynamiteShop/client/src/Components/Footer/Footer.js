@@ -12,16 +12,16 @@ function Footer(props) {
 								<div className="text-box__content">
 									<ul className="list-group">
 										<li className="list-group__item">
-											<Link to="#">T-Shirts</Link>
+											<Link to="/clothes-footwear/t-shirts">T-Shirts</Link>
 										</li>
 										<li className="list-group__item">
-											<Link to="#">Hoddies</Link>
+											<Link to="/clothes-footwear/hoodies">Hoddies</Link>
 										</li>
 										<li className="list-group__item">
-											<Link to="#">Footwear</Link>
+											<Link to="/clothes-footwear/footwear">Footwear</Link>
 										</li>
 										<li className="list-group__item">
-											<Link to="#">Digital Goods</Link>
+											<Link to="/product-category/digital-goods">Digital Goods</Link>
 										</li>
 										<li className="list-group__item">
 											<Link to="#">SALE</Link>

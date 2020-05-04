@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import ProductItem from '../cpn/ProductItem';
 import { connect } from 'react-redux';
@@ -5,7 +6,7 @@ import { connect } from 'react-redux';
 import { actFetchDataAllProductsRequest } from '../../actions/actFetchData';
 import TitlePage from '../TitlePage/TitlePage';
 import SidebarLeft from '../SidebarLeft/SidebarLeft';
-class AllProducts extends Component {
+class DigitalGoods extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,7 +31,9 @@ class AllProducts extends Component {
         this.props.DbAllProducts !== undefined ||
         this.props.DbAllProducts.length !== 0
       ) {
-        return this.props.DbAllProducts.map((value, key) => (
+        return this.props.DbAllProducts.filter(
+          (item) => item.productPortfolio === 'digitalgoods'
+        ).map((value, key) => (
           <div className="col-md-4">
             <ProductItem
               key={key}
@@ -105,7 +108,9 @@ class AllProducts extends Component {
               <div className="col-xl-3 col-md-12 ">
                 <SidebarLeft
                   changeStatusFilter={() => this.changeStatusFilter()}
-                  data={this.props.DbAllProducts}
+                  data={this.props.DbAllProducts.filter(
+                    (item) => item.productPortfolio === 'digitalgoods'
+                  )}
                 ></SidebarLeft>
               </div>
               <div className="col-xl-9 col-md-12">
@@ -141,4 +146,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AllProducts);
+export default connect(mapStateToProps, mapDispatchToProps)(DigitalGoods);

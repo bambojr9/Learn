@@ -34,7 +34,7 @@ class SidebarLeft extends Component {
     });
     this.props.getDataFilter(result);
   };
-  toggleClassa = () => {
+  toggleClass = () => {
     this.props.changeEditStatusClassSidebar();
   };
 
@@ -64,29 +64,44 @@ class SidebarLeft extends Component {
             <h3 className="title">CATEGORIES</h3>
             <ul className="product-category">
               <li className="product-category__item">
-                <Link className="product-category__link" to="/">
+                <Link
+                  className="product-category__link"
+                  to="/product-category/clothes-footwear/"
+                >
                   Clothes & Footwear
                 </Link>
                 <ul className="children">
                   <li className="product-category__item">
-                    <Link className="product-category__link" to="/">
+                    <Link
+                      className="product-category__link"
+                      to="/clothes-footwear/footwear"
+                    >
                       Footwear
                     </Link>
                   </li>
                   <li className="product-category__item">
-                    <Link className="product-category__link" to="/">
+                    <Link
+                      className="product-category__link"
+                      to="/clothes-footwear/hoodies"
+                    >
                       Hoodies
                     </Link>
                   </li>
                   <li className="product-category__item">
-                    <Link className="product-category__link" to="/">
+                    <Link
+                      className="product-category__link"
+                      to="/clothes-footwear/t-shirts"
+                    >
                       T-Shirts
                     </Link>
                   </li>
                 </ul>
               </li>
               <li className="product-category__item">
-                <Link className="product-category__link" to="/">
+                <Link
+                  className="product-category__link"
+                  to="/product-category/digital-goods"
+                >
                   Digital goods
                 </Link>
               </li>
@@ -120,7 +135,7 @@ class SidebarLeft extends Component {
               <span>Filter</span>
             </Link>
           </div>
-          <span onClick={() => this.toggleClassa()} className="toggle-sidebar">
+          <span onClick={() => this.toggleClass()} className="toggle-sidebar">
             <FontAwesomeIcon icon={faSlidersH} />
           </span>
         </div>
