@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { actFetchDataAllProductsRequest } from '../../actions/actFetchData';
 import TitlePage from '../TitlePage/TitlePage';
 import SidebarLeft from '../SidebarLeft/SidebarLeft';
-class Hoddies extends Component {
+class ClothesFootwearItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,15 +31,17 @@ class Hoddies extends Component {
         this.props.DbAllProducts.length !== 0
       ) {
         return this.props.DbAllProducts.filter(
-          (item) => item.productPortfolio === 'hoddie'
+          (item) => item.productPortfolio === this.props.match.params.name
         ).map((value, key) => (
-          <div className="col-md-4">
+          <div className="col-md-4" key={key}>
             <ProductItem
               key={key}
+              id={value.id}
               src={value.src}
               name={value.name}
               price={value.price}
               oldPrice={value.oldPrice}
+              sale={value.sale}
             ></ProductItem>
           </div>
         ));
@@ -56,10 +58,12 @@ class Hoddies extends Component {
           <div className="col-md-4">
             <ProductItem
               key={key}
+              id={value.id}
               src={value.src}
               name={value.name}
               price={value.price}
               oldPrice={value.oldPrice}
+              sale={value.sale}
             ></ProductItem>
           </div>
         ));
@@ -100,7 +104,10 @@ class Hoddies extends Component {
 
     return (
       <div>
-        <TitlePage></TitlePage>
+        <TitlePage
+          slug={[this.props.match.params.slug]}
+          name={this.props.match.params.name}
+        ></TitlePage>
         <div className="main">
           <div className="container">
             <div className="row">
@@ -108,7 +115,8 @@ class Hoddies extends Component {
                 <SidebarLeft
                   changeStatusFilter={() => this.changeStatusFilter()}
                   data={this.props.DbAllProducts.filter(
-                    (item) => item.productPortfolio === 'hoddie'
+                    (item) =>
+                      item.productPortfolio === this.props.match.params.name
                   )}
                 ></SidebarLeft>
               </div>
@@ -145,4 +153,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hoddies);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ClothesFootwearItem);

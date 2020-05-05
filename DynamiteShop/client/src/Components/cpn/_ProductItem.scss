@@ -42,7 +42,7 @@
         transition: all 0.3s;
       }
     }
-    button {
+    .btn {
       margin-top: 1.5rem;
       padding: 0.5rem 1.6rem;
       font-size: 1.6rem;
@@ -70,7 +70,7 @@
       opacity: 1;
     }
     .productItem__content {
-      button {
+      .btn {
         background-color: #d6413b;
         transition: all 0.3s;
       }

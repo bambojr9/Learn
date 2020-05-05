@@ -34,10 +34,12 @@ class AllProducts extends Component {
           <div className="col-md-4">
             <ProductItem
               key={key}
+              id={value.id}
               src={value.src}
               name={value.name}
               price={value.price}
               oldPrice={value.oldPrice}
+              sale={value.sale}
             ></ProductItem>
           </div>
         ));
@@ -54,10 +56,12 @@ class AllProducts extends Component {
           <div className="col-md-4">
             <ProductItem
               key={key}
+              id={value.id}
               src={value.src}
               name={value.name}
               price={value.price}
               oldPrice={value.oldPrice}
+              sale={value.sale}
             ></ProductItem>
           </div>
         ));
@@ -98,7 +102,7 @@ class AllProducts extends Component {
 
     return (
       <div>
-        <TitlePage></TitlePage>
+        <TitlePage name="All Product"></TitlePage>
         <div className="main">
           <div className="container">
             <div className="row">

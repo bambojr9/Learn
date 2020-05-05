@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import dulieujson from "./dulieu.json";
 import NewsRelated from "./NewsRelated";
+
 export default class NewsDetail extends Component {
   render() {
     let count = 1;

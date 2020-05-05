@@ -9,10 +9,21 @@ class TitlePage extends Component {
             <Link to="#" className="breadcrumb-item">
               Home
             </Link>
-            <span to="#" className="breadcrumb-item">
-              All products
-            </span>
-            <h2 className="float-right">All products</h2>
+            {this.props.slug ? (
+              <span to="#" className="breadcrumb-item">
+                {this.props.slug}
+              </span>
+            ) : (
+              ''
+            )}
+            {this.props.name ? (
+              <span to="#" className="breadcrumb-item">
+                {this.props.name}
+              </span>
+            ) : (
+              ''
+            )}
+            <h2 className="float-right">{this.props.name}</h2>
           </div>
         </div>
       </div>

@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import ProductItem from '../cpn/ProductItem';
 import { connect } from 'react-redux';
@@ -6,7 +5,7 @@ import { connect } from 'react-redux';
 import { actFetchDataAllProductsRequest } from '../../actions/actFetchData';
 import TitlePage from '../TitlePage/TitlePage';
 import SidebarLeft from '../SidebarLeft/SidebarLeft';
-class Footwear extends Component {
+class Sale extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,19 +30,21 @@ class Footwear extends Component {
         this.props.DbAllProducts !== undefined ||
         this.props.DbAllProducts.length !== 0
       ) {
-        return this.props.DbAllProducts.filter(
-          (item) => item.productPortfolio === 'footwear'
-        ).map((value, key) => (
-          <div className="col-md-4">
-            <ProductItem
-              key={key}
-              src={value.src}
-              name={value.name}
-              price={value.price}
-              oldPrice={value.oldPrice}
-            ></ProductItem>
-          </div>
-        ));
+        return this.props.DbAllProducts.filter((item) => item.sale).map(
+          (value, key) => (
+            <div className="col-md-4">
+              <ProductItem
+                key={key}
+                id={value.id}
+                src={value.src}
+                name={value.name}
+                price={value.price}
+                oldPrice={value.oldPrice}
+                sale={value.sale}
+              ></ProductItem>
+            </div>
+          )
+        );
       } else {
         return <h1>Product does not Exist</h1>;
       }
@@ -54,13 +55,15 @@ class Footwear extends Component {
         this.props.GetDataFilter.length !== 0
       ) {
         return this.props.GetDataFilter.map((value, key) => (
-          <div className="col-md-4">
+          <div className="col-md-4" key={key}>
             <ProductItem
               key={key}
+              id={value.id}
               src={value.src}
               name={value.name}
               price={value.price}
               oldPrice={value.oldPrice}
+              sale={value.sale}
             ></ProductItem>
           </div>
         ));
@@ -101,16 +104,14 @@ class Footwear extends Component {
 
     return (
       <div>
-        <TitlePage></TitlePage>
+        <TitlePage name="sale"></TitlePage>
         <div className="main">
           <div className="container">
             <div className="row">
               <div className="col-xl-3 col-md-12 ">
                 <SidebarLeft
                   changeStatusFilter={() => this.changeStatusFilter()}
-                  data={this.props.DbAllProducts.filter(
-                    (item) => item.productPortfolio === 'footwear'
-                  )}
+                  data={this.props.DbAllProducts.filter((item) => item.sale)}
                 ></SidebarLeft>
               </div>
               <div className="col-xl-9 col-md-12">
@@ -146,4 +147,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Footwear);
+export default connect(mapStateToProps, mapDispatchToProps)(Sale);

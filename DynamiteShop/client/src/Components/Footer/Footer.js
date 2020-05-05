@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 function Footer(props) {
 	return (
-		<Router>
+	
 			<footer id="footer" className="footer">
 				<div className="container">
 					<div className="row">
@@ -12,13 +12,13 @@ function Footer(props) {
 								<div className="text-box__content">
 									<ul className="list-group">
 										<li className="list-group__item">
-											<Link to="/clothes-footwear/t-shirts">T-Shirts</Link>
+											<Link to="/product-category/clothes-footwear/t-shirts">T-Shirts</Link>
 										</li>
 										<li className="list-group__item">
-											<Link to="/clothes-footwear/hoodies">Hoddies</Link>
+											<Link to="/product-category/clothes-footwear/hoodies">Hoddies</Link>
 										</li>
 										<li className="list-group__item">
-											<Link to="/clothes-footwear/footwear">Footwear</Link>
+											<Link to="/product-category/clothes-footwear/footwear">Footwear</Link>
 										</li>
 										<li className="list-group__item">
 											<Link to="/product-category/digital-goods">Digital Goods</Link>
@@ -116,7 +116,7 @@ function Footer(props) {
 					</div>
 				</div>
 			</footer>
-		</Router>
+		
 	);
 }
 

@@ -14,7 +14,7 @@ export default class DieuHuongUrl extends Component {
           path="/tin-tuc-chi-tiet/:slug.:id.html"
           component={NewsDetail}
         ></Route>
-        {/* <Route path="/tin-tuc/" component={NewsDetail}></Route> */}
+        <Route path="/tin-tuc/" component={NewsDetail}></Route>
         <Route path="/lien-he" component={Contact}></Route>
       </div>
     );

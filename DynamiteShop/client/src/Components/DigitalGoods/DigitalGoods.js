@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import ProductItem from '../cpn/ProductItem';
 import { connect } from 'react-redux';
@@ -34,13 +33,15 @@ class DigitalGoods extends Component {
         return this.props.DbAllProducts.filter(
           (item) => item.productPortfolio === 'digitalgoods'
         ).map((value, key) => (
-          <div className="col-md-4">
+          <div className="col-md-4 " key={key}>
             <ProductItem
               key={key}
+              id={value.id}
               src={value.src}
               name={value.name}
               price={value.price}
               oldPrice={value.oldPrice}
+              sale={value.sale}
             ></ProductItem>
           </div>
         ));
@@ -57,10 +58,12 @@ class DigitalGoods extends Component {
           <div className="col-md-4">
             <ProductItem
               key={key}
+              id={value.id}
               src={value.src}
               name={value.name}
               price={value.price}
               oldPrice={value.oldPrice}
+              sale={value.sale}
             ></ProductItem>
           </div>
         ));
@@ -101,7 +104,7 @@ class DigitalGoods extends Component {
 
     return (
       <div>
-        <TitlePage></TitlePage>
+        <TitlePage name="Digital Goods"></TitlePage>
         <div className="main">
           <div className="container">
             <div className="row">

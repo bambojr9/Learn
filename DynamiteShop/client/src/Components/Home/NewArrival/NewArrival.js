@@ -64,6 +64,7 @@ class NewArrival extends Component {
 					name={value.name}
 					price={value.price}
 					oldPrice={value.oldPrice}
+					sale={value.sale}
 				></ProductItem>
 			));
 		}

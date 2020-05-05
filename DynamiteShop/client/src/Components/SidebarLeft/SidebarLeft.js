@@ -74,7 +74,7 @@ class SidebarLeft extends Component {
                   <li className="product-category__item">
                     <Link
                       className="product-category__link"
-                      to="/clothes-footwear/footwear"
+                      to="/product-category/clothes-footwear/footwear"
                     >
                       Footwear
                     </Link>
@@ -82,7 +82,7 @@ class SidebarLeft extends Component {
                   <li className="product-category__item">
                     <Link
                       className="product-category__link"
-                      to="/clothes-footwear/hoodies"
+                      to="/product-category/clothes-footwear/hoodies"
                     >
                       Hoodies
                     </Link>
@@ -90,7 +90,7 @@ class SidebarLeft extends Component {
                   <li className="product-category__item">
                     <Link
                       className="product-category__link"
-                      to="/clothes-footwear/t-shirts"
+                      to="/product-category/clothes-footwear/t-shirts"
                     >
                       T-Shirts
                     </Link>
