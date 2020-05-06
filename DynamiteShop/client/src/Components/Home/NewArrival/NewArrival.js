@@ -60,6 +60,7 @@ class NewArrival extends Component {
 			).map((value, key) => (
 				<ProductItem
 					key={key}
+					id={value.id}
 					src={value.src}
 					name={value.name}
 					price={value.price}

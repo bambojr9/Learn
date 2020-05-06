@@ -32,7 +32,7 @@ function App() {
         <Route path="/product-category/:name" component={ClothesFootwear} />
         <Route path="/sale" component={Sale} />
         <Route
-          path="/product/:slug.:id.html"
+          path="/product/:name.:id.html"
           component={ProductsDetail}
         ></Route>
         <Route path="/product" component={ProductsDetail}></Route>

@@ -51,6 +51,7 @@ class FeaturedProducts extends Component {
       return this.props.DbFeatureProducts.map((value, key) => (
         <ProductItem
         key={key}
+        id={value.id}
         src={value.src}
         name={value.name}
         price={value.price}

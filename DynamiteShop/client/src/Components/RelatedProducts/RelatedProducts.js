@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class ProductsRelated extends Component {
+class RelatedProducts extends Component {
   chuyendoiURL = (str) => {
     // Chuyển hết sang chữ thường
     str = str.toLowerCase();
@@ -80,4 +80,4 @@ class ProductsRelated extends Component {
     );
   }
 }
-export default ProductsRelated;
+export default RelatedProducts;
