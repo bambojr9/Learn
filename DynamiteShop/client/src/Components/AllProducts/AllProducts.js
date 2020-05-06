@@ -31,7 +31,7 @@ class AllProducts extends Component {
         this.props.DbAllProducts.length !== 0
       ) {
         return this.props.DbAllProducts.map((value, key) => (
-          <div className="col-md-4">
+          <div className="col-md-4" key={key}>
             <ProductItem
               key={key}
               id={value.id}
@@ -53,7 +53,7 @@ class AllProducts extends Component {
         this.props.GetDataFilter.length !== 0
       ) {
         return this.props.GetDataFilter.map((value, key) => (
-          <div className="col-md-4">
+          <div className="col-md-4" key={key}>
             <ProductItem
               key={key}
               id={value.id}
@@ -102,7 +102,7 @@ class AllProducts extends Component {
 
     return (
       <div>
-        <TitlePage name="All Product"></TitlePage>
+        <TitlePage name="All-Products"></TitlePage>
         <div className="main">
           <div className="container">
             <div className="row">

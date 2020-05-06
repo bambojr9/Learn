@@ -32,7 +32,7 @@ class Sale extends Component {
       ) {
         return this.props.DbAllProducts.filter((item) => item.sale).map(
           (value, key) => (
-            <div className="col-md-4">
+            <div className="col-md-4" key={key}>
               <ProductItem
                 key={key}
                 id={value.id}
