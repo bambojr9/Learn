@@ -31,10 +31,11 @@ class ClothesFootwear extends Component {
         this.props.DbAllProducts.length !== 0
       ) {
         return this.props.DbAllProducts.filter(
-          (item) => item.productPortfolio !=='digitalgoods'
+          (item) => item.productPortfolio !=='digital-goods'
         ).map((value, key) => (
           <div className="col-md-4">
             <ProductItem
+             slug="clothes-footwear"
               key={key}
               id={value.id}
               src={value.src}
@@ -56,6 +57,7 @@ class ClothesFootwear extends Component {
         return this.props.GetDataFilter.map((value, key) => (
           <div className="col-md-4">
             <ProductItem
+              slug="clothes-footwear"
               key={key}
               id={value.id}
               src={value.src}
@@ -102,7 +104,7 @@ class ClothesFootwear extends Component {
 
     return (
       <div>
-        <TitlePage slug={this.props.match.params.slug} name={this.props.match.params.name}></TitlePage>
+        <TitlePage slug={this.props.match.params.slug} name="Clothes Footwear"></TitlePage>
         <div className="main">
           <div className="container">
             <div className="row">
@@ -110,7 +112,7 @@ class ClothesFootwear extends Component {
                 <SidebarLeft
                   changeStatusFilter={() => this.changeStatusFilter()}
                   data={this.props.DbAllProducts.filter(
-                    (item) => item.productPortfolio === 'hoodies' ||  item.productPortfolio === 't-shirts'
+                    (item) => item.productPortfolio !== 'digital-goods' 
                   )}
                 ></SidebarLeft>
               </div>

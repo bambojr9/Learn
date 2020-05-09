@@ -6,7 +6,7 @@ import Footer from './Components/Footer/Footer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AllProducts from './Components/AllProducts/AllProducts';
 import ClothesFootwearItem from './Components/ClothesFootwearItem/ClothesFootwearItem';
-import DigitalGoods from './Components/DigitalGoods/DigitalGoods';
+// import DigitalGoods from './Components/DigitalGoods/DigitalGoods';
 import ClothesFootwear from './Components/ClothesFootwear/ClothesFootwear';
 import Home from './Components/Home/Home';
 import Sale from './Components/Sale/Sale';
@@ -26,13 +26,15 @@ function App() {
           component={ClothesFootwearItem}
         />
         <Route
-          path="/product-category/digital-goods"
-          component={DigitalGoods}
+          path="/product-category/clothes-footwear"
+          component={ClothesFootwear}
         />
-        <Route path="/product-category/:name" component={ClothesFootwear} />
+        <Route path="/product-category/:name" component={ClothesFootwearItem} />
+        {/* <Route path="/product-category/:name" component={DigitalGoods} /> */}
+
         <Route path="/sale" component={Sale} />
         <Route
-          path="/product/:name.:id.html"
+          path={['/product/:name.:id.html', '/product/:slug/:name.:id.html']}
           component={ProductsDetail}
         ></Route>
         <Route path="/product" component={ProductsDetail}></Route>

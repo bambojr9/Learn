@@ -32,7 +32,7 @@ class AllProducts extends Component {
       ) {
         return this.props.DbAllProducts.map((value, key) => (
           <div className="col-md-4" key={key}>
-            <ProductItem
+            <ProductItem           
               key={key}
               id={value.id}
               src={value.src}

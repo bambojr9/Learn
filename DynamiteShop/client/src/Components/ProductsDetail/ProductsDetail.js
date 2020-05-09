@@ -4,13 +4,30 @@ import { connect } from 'react-redux';
 import { actFetchDataAllProductsRequest } from '../../actions/actFetchData';
 import TitlePage from '../TitlePage/TitlePage';
 import Test from '../../Test/TestCounter';
+import { Redirect, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faFacebookF,
+  faTwitter,
+  faWhatsapp,
+  faInstagram,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
 class ProductsDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
+      count: 1,
     };
   }
+
+  submitForm = (event) => {
+    event.preventDefault();
+    this.setState({
+      isRedirect: true,
+    });
+  };
+
   componentDidMount() {
     this.props.fetchDatabaseAllProducts();
   }
@@ -64,40 +81,78 @@ class ProductsDetail extends Component {
                     reprehenderit suscipit voluptates quas. Incidunt, molestiae!
                   </p>
                 </div>
-                <div className="productDetail__quantity">
-                  <div className="minus">
+                {/* <form action="./addtocart" method="POST"> */}
+                <form>
+                  <div className="productDetail__quantity">
+                    <div className="decrement">
+                      <input
+                        onClick={() =>
+                          this.setState({
+                            count:
+                              this.state.count > 1 ? this.state.count - 1 : 1,
+                          })
+                        }
+                        type="button"
+                        value="-"
+                        disabled={this.state.disabled}
+                      />
+                    </div>
                     <input
-                      onClick={() =>
+                      onChange={(event) =>
                         this.setState({
-                          count:
-                            this.state.count > 0 ? this.state.count - 1 : 0,
+                          count: parseInt(event.target.value) || '',
                         })
                       }
-                      type="button"
-                      value="-"
+                      type="number"
+                      value={this.state.count}
+                      step="1"
                     />
+                    <div className="increment">
+                      <input
+                        onClick={() =>
+                          this.setState({
+                            count:
+                              this.state.count > 0 ? this.state.count + 1 : 1,
+                          })
+                        }
+                        type="button"
+                        value="+"
+                      />
+                    </div>
                   </div>
-                  <input
-                    onChange={(event) =>
-                      this.setState({
-                        count: parseInt(event.target.value) || '',
-                      })
-                    }
-                    type="number"
-                    value={this.state.count}
-                    step="1"
-                  />
-                  <div className="plus">
-                    <input
-                      onClick={() =>
-                        this.setState({
-                          count: this.state.count + 1,
-                        })
-                      }
-                      type="button"
-                      value="+"
-                    />
-                  </div>
+                  <button
+                    onClick={(event) => this.submitForm(event)}
+                    type="submit"
+                    className="single_add_to_cart_button"
+                  >
+                    ADD TO CART
+                  </button>
+                </form>
+                <span className="span posted_in">
+                  Category:
+                  <Link
+                    className="tags"
+                    to={'/product-category/' + value.productPortfolio}
+                  >
+                    {value.productPortfolio}
+                  </Link>
+                </span>
+                <div className="social-icon">
+                  <Link className="social-icon__item" to="/clothes-footwear">
+                    <FontAwesomeIcon icon={faFacebookF} />
+                  </Link>
+                  <Link className="social-icon__item" to="/clothes-footwear">
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </Link>
+                  <Link className="social-icon__item" to="/clothes-footwear">
+                    <FontAwesomeIcon icon={faWhatsapp} />
+                  </Link>
+                  <Link className="social-icon__item" to="/clothes-footwear">
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </Link>
+                  <Link className="social-icon__item" to="/clothes-footwear">
+                    <FontAwesomeIcon icon={faYoutube} />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -107,9 +162,14 @@ class ProductsDetail extends Component {
     });
   };
   render() {
+    if (this.state.isRedirect === true) {
+      console.log('  redirect to products');
+      return <Redirect to="/all-products">;</Redirect>;
+    }
     // console.log(this.props);     in ra tat ca cac props cua component nay
-    console.log(this.props.match.params.id);
-    console.log(this.props.match.params.name);
+    // console.log(this.props.match.params.id);
+    // console.log(this.props.match.params.name);
+    console.log(this.state.count);
     return (
       <section className="Detail">
         <TitlePage

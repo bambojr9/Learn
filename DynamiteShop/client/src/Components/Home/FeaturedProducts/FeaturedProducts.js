@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import ProductItem from '../../cpn/ProductItem';
-import { connect } from 'react-redux';
-// import { actFetchData } from '../../actions/actFetchData';
-import { actFetchDataFeaturedProductsRequest } from '../../../actions/actFetchData';
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-
 //
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { connect } from 'react-redux';
+// import { actFetchData } from '../../actions/actFetchData';
+import { actFetchDataFeaturedProductsRequest } from '../../../actions/actFetchData';
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.

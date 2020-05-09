@@ -35,6 +35,7 @@ class ClothesFootwearItem extends Component {
         ).map((value, key) => (
           <div className="col-md-4" key={key}>
             <ProductItem
+            slug={this.props.match.params.slug}
               key={key}
               id={value.id}
               src={value.src}
@@ -57,6 +58,7 @@ class ClothesFootwearItem extends Component {
         return this.props.GetDataFilter.map((value, key) => (
           <div className="col-md-4">
             <ProductItem
+              slug={this.props.match.params.slug}
               key={key}
               id={value.id}
               src={value.src}
@@ -101,11 +103,10 @@ class ClothesFootwearItem extends Component {
     //     return <h1>Product does not Exist</h1>;
     //   }
     // };
-
     return (
       <div>
         <TitlePage
-          slug={[this.props.match.params.slug]}
+          slug={this.props.match.params.slug}
           name={this.props.match.params.name}
         ></TitlePage>
         <div className="main">

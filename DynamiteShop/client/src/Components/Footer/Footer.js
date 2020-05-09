@@ -24,7 +24,7 @@ function Footer(props) {
 											<Link to="/product-category/digital-goods">Digital Goods</Link>
 										</li>
 										<li className="list-group__item">
-											<Link to="#">SALE</Link>
+											<Link to="/sale">SALE</Link>
 										</li>								
 									</ul>
 								</div>

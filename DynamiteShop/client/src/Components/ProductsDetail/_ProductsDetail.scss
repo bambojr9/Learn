@@ -9,3 +9,65 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
 }
+.productDetail {
+  &__smallImg {
+    img {
+      margin-bottom: 2rem;
+    }
+  }
+  &__name {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #0f4861;
+  }
+  &__status {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #28a745;
+  }
+  &__price {
+    color: #0f4861;
+    font-weight: 600;
+    font-size: 2rem;
+  }
+  &__description {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #888888;
+  }
+
+  &__quantity {
+    display: flex;
+    padding: 1rem;
+    border: 1px solid #777777;
+    input {
+      font-weight: 700;
+      color: #000;
+    }
+    .decrement {
+      input {
+        width: 4rem;
+        height: 3rem;
+        margin-right: 1rem;
+      }
+    }
+    input[type='number'] {
+      border: 1px solid grey;
+      text-align: center;
+      width: 5rem;
+    }
+    .increment {
+      input {
+        width: 4rem;
+        height: 3rem;
+        margin-left: 1rem;
+      }
+    }
+  }
+  form {
+    display: flex;
+    .single_add_to_cart_button {
+      margin-left: 5rem;
+    }
+  }
+}

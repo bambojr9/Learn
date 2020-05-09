@@ -32,20 +32,22 @@ function ProductItem(props) {
 
     // return
     return str;
+
 }
+
   return (
     <div className="productItem">
       {/* <div className="col-md-3 "> */}
-      <Link to={"/product/" +  chuyendoiURL(props.name) +"."+props.id+".html"} className="productItem__img">
+      <Link to={"/product/" + (props.slug!==undefined?(props.slug+'/'):"")+  chuyendoiURL(props.name) +"."+props.id+".html"} className="productItem__img">
         {/* <img src={T_Shirt_0101} alt="" className="img-fluid " /> */}
         <img
           src={require('../../assets/img/products/' + props.src[0])}
-          alt="T_Shirt_0101"
+          alt={require('../../assets/img/products/' + props.src[0])}
           className="img-fluid productItem__img--01"
         />
         <img
           src={require('../../assets/img/products/' + props.src[1])}
-          alt="T_Shirt_0102"
+          alt={require('../../assets/img/products/' + props.src[1])}
           className="img-fluid productItem__img--02"
         />
       </Link>
@@ -74,7 +76,7 @@ function ProductItem(props) {
             </Link>
           </span>
         </div>
-        <Link to={"/product/" +  chuyendoiURL(props.name) +"."+props.id+".html"} className="btn">
+        <Link to={"/product/" + (props.slug!==undefined?(props.slug+'/'):"")+  chuyendoiURL(props.name) +"."+props.id+".html"} className="btn">
           <FontAwesomeIcon icon={faShoppingBag} />
           <span>Select Options</span>
         </Link>
