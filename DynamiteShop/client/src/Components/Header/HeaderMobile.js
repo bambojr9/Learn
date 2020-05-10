@@ -27,27 +27,27 @@ function HeaderMobile(props) {
           </Link>
         </li>
         <li className="mobile-navigation__item">
-          <Link className="mobile-navigation__link" to="/clothes-footwear/t-shirts">
+          <Link className="mobile-navigation__link"  to="/product-category/clothes-footwear/t-shirts">
             T-shirts
           </Link>
         </li>
         <li className="mobile-navigation__item">
-          <Link className="mobile-navigation__link" to="/clothes-footwear/hoodies">
+          <Link className="mobile-navigation__link" to="/product-category/clothes-footwear/hoodies">
             Hoodies
           </Link>
         </li>
         <li className="mobile-navigation__item">
-          <Link className="mobile-navigation__link" to="/clothes-footwear/footwear">
+          <Link className="mobile-navigation__link" to="/product-category/clothes-footwear/footwear">
             Footwear
           </Link>
         </li>
         <li className="mobile-navigation__item">
-          <Link className="mobile-navigation__link" to="/product-category/digital-goods">
+          <Link className="mobile-navigation__link"  to="/product-category/digital-goods">
             Digital goods
           </Link>
         </li>
         <li className="mobile-navigation__item">
-          <Link className="mobile-navigation__link" to="/">
+          <Link className="mobile-navigation__link" to="/sale">
             Sale!
           </Link>
         </li>

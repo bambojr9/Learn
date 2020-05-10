@@ -141,7 +141,7 @@ class NewArrival extends Component {
                 {this.listItems()}
               </Carousel>
             </div>
-          </div>{' '}
+          </div>
           {/* end list data  */}
         </section>
       </div>

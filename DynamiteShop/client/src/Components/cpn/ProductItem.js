@@ -52,7 +52,7 @@ function ProductItem(props) {
         />
       </Link>
       <div className="productItem__content">
-        <Link to={"/product/" +  chuyendoiURL(props.name) +"."+props.id+".html"}>        
+        <Link to={"/product/" + (props.slug!==undefined?(props.slug+'/'):"")+  chuyendoiURL(props.name) +"."+props.id+".html"}>        
           <h4 className="productItem__content--title">{props.name}</h4>
         </Link>
         <div className="productItem__content--price">
