@@ -12,9 +12,23 @@ class SidebarLeft extends Component {
       disabled: false,
     };
   }
-  onChange = (event) =>{
-    this.props.getDataSearchFilter(event.target.value)
-  }
+  onChange = (event) => {
+    this.props.getTextSearchFilter(event.target.value);
+    let datafilter = this.props.data.filter((value) => {
+      return value.name.indexOf(this.props.GetTextSearchFilter) !== -1;
+    });
+    let result = [];
+    datafilter.forEach((item) => {
+      if (
+        item.price >= this.props.GetPriceFilter[0] &&
+        item.price <= this.props.GetPriceFilter[1]
+      ) {
+        result.push(item);
+      }
+    });
+    console.log(result);
+    this.props.getDataFilter(result);
+  };
   handleDisabledChange = (disabled) => {
     this.setState({ disabled });
   };
@@ -42,6 +56,19 @@ class SidebarLeft extends Component {
   };
 
   render() {
+    // let datafilter = this.props.data.filter((value) => {
+    //   return value.name.indexOf(this.props.GetTextSearchFilter) !== -1;
+    // });
+    // let result = [];
+    // datafilter.forEach((item) => {
+    //   if (
+    //     item.price >= this.props.GetPriceFilter[0] &&
+    //     item.price <= this.props.GetPriceFilter[1]
+    //   ) {
+    //     result.push(item);
+    //   }
+    // });
+    // this.props.getDataFilter(result);
     const { disabled } = this.state;
     return (
       <aside
@@ -56,7 +83,11 @@ class SidebarLeft extends Component {
           <div className="searchBar">
             <h3 className="title">Search</h3>
             <div className="search">
-              <input onChange={(event)=>this.onChange(event)} type="search" placeholder="Search products..." />
+              <input
+                onChange={(event) => this.onChange(event)}
+                type="search"
+                placeholder="Search products..."
+              />
               <Link to="/">
                 <FontAwesomeIcon icon={faSearch} />
               </Link>
@@ -150,6 +181,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     GetPriceFilter: state.GetPriceFilter,
     EditStatusClass: state.EditStatusClass,
+    GetTextSearchFilter: state.GetTextSearchFilter,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -166,12 +198,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         getDataFilter,
       });
     },
-    getDataSearchFilter: (getDataSearchFilter) => {
-			dispatch({
-				type: 'GET_DATA_SEARCH_FILTER',
-				getDataSearchFilter,
-			});
-		},
+    getTextSearchFilter: (getTextSearchFilter) => {
+      dispatch({
+        type: 'GET_TEXT_SEARCH_FILTER',
+        getTextSearchFilter,
+      });
+    },
     changeEditStatusClassSidebar: () => {
       dispatch({
         type: 'CHANGE_EDIT_STATUS_CLASS_SIDEBAR',
