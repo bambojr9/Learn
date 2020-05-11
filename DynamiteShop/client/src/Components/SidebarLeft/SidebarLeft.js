@@ -12,6 +12,9 @@ class SidebarLeft extends Component {
       disabled: false,
     };
   }
+  onChange = (event) =>{
+    this.props.getDataSearchFilter(event.target.value)
+  }
   handleDisabledChange = (disabled) => {
     this.setState({ disabled });
   };
@@ -53,7 +56,7 @@ class SidebarLeft extends Component {
           <div className="searchBar">
             <h3 className="title">Search</h3>
             <div className="search">
-              <input type="search" placeholder="Search products..." />
+              <input onChange={(event)=>this.onChange(event)} type="search" placeholder="Search products..." />
               <Link to="/">
                 <FontAwesomeIcon icon={faSearch} />
               </Link>
@@ -163,6 +166,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         getDataFilter,
       });
     },
+    getDataSearchFilter: (getDataSearchFilter) => {
+			dispatch({
+				type: 'GET_DATA_SEARCH_FILTER',
+				getDataSearchFilter,
+			});
+		},
     changeEditStatusClassSidebar: () => {
       dispatch({
         type: 'CHANGE_EDIT_STATUS_CLASS_SIDEBAR',
