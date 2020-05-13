@@ -13,21 +13,24 @@ class SidebarLeft extends Component {
     };
   }
   onChange = (event) => {
+    this.props.changeStatusFilter();
     this.props.getTextSearchFilter(event.target.value);
     let datafilter = this.props.data.filter((value) => {
       return value.name.indexOf(this.props.GetTextSearchFilter) !== -1;
     });
-    let result = [];
-    datafilter.forEach((item) => {
-      if (
-        item.price >= this.props.GetPriceFilter[0] &&
-        item.price <= this.props.GetPriceFilter[1]
-      ) {
-        result.push(item);
-      }
-    });
-    console.log(result);
-    this.props.getDataFilter(result);
+    // let result = [];
+   
+    // this.props.data.forEach((item) => {
+    //   if (
+    //     item.price >= this.props.GetPriceFilter[0] &&
+    //     item.price <= this.props.GetPriceFilter[1]
+    //   ) {
+    //     result.push(item);
+    //   }
+    // });
+    
+    
+    // this.props.getDataFilter(result);
   };
   handleDisabledChange = (disabled) => {
     this.setState({ disabled });
@@ -38,7 +41,7 @@ class SidebarLeft extends Component {
     this.props.getPriceFilter(price);
   };
   handleClick = (event) => {
-    this.props.changeStatusFilter();
+    // this.props.changeStatusFilter();
     event.preventDefault();
     let result = [];
     this.props.data.forEach((item) => {
@@ -56,6 +59,7 @@ class SidebarLeft extends Component {
   };
 
   render() {
+ 
     // let datafilter = this.props.data.filter((value) => {
     //   return value.name.indexOf(this.props.GetTextSearchFilter) !== -1;
     // });
