@@ -46,7 +46,7 @@ function MainSlide(props) {
           ssr={true} // means to render carousel on server-side.
           infinite={true}
           // autoPlay={props.deviceType !== 'mobile' ? true : false}
-          // autoPlaySpeed={2555}
+          autoPlaySpeed={2555}
           keyBoardControl={true}
           customTransition="all .5"
           transitionDuration={500}

@@ -73,15 +73,19 @@ class ProductsDetail extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-1 productDetail__smallImg">
-                {value.src.map((img, key) => (
-                  <img
-                    onClick={(imgid) => this.toggleBigImage(img)}
-                    key={key}
-                    src={require('../../assets/img/products/' + img)}
-                    alt="Small img"
-                    className="img-fluid "
-                  />
-                ))}
+                <ul className="productDetail__smallImg--wrap">
+                  {value.src.map((img, key) => (
+                    <li>
+                      <img
+                        onClick={(imgid) => this.toggleBigImage(img)}
+                        key={key}
+                        src={require('../../assets/img/products/' + img)}
+                        alt="Small img"
+                        className="img-fluid "
+                      />
+                    </li>
+                  ))}
+                </ul>
               </div>
               <div className="col-md-5 productDetail__BigImage">
                 {this.state.defaultBigImage ? (
@@ -99,7 +103,7 @@ class ProductsDetail extends Component {
                   />
                 )}
               </div>
-              <div className="col-md-6">
+              <div className="col-md-6 productDetail__content">
                 <h2 className="productDetail__name">{value.name}</h2>
                 <span className="productDetail__status">
                   {value.status ? 'Stock up' : 'Sold out'}

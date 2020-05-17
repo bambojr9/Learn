@@ -74,25 +74,24 @@ class ClothesFootwear extends Component {
   // };
 
   render() {
-     let datafilter = this.props.DbAllProducts.filter((value) => {
+    let datafilter = this.props.DbAllProducts.filter((value) => {
       return value.name.indexOf(this.props.GetTextSearchFilter) !== -1;
     });
-    console.log(datafilter)
+    // console.log(datafilter);
     let result = [];
-    datafilter.filter(
-      (item) =>  item.productPortfolio !=='digital-goods'
-    ).forEach((item) => {
-      if (
-        item.price >= this.props.GetPriceFilter[0] &&
-        item.price <= this.props.GetPriceFilter[1]
-      ) {
-        result.push(item);
-      }
-    });
-
+    datafilter
+      .filter((item) => item.productPortfolio !== 'digital-goods')
+      .forEach((item) => {
+        if (
+          item.price >= this.props.GetPriceFilter[0] &&
+          item.price <= this.props.GetPriceFilter[1]
+        ) {
+          result.push(item);
+        }
+      });
 
     const showAllProducts = () => {
-      if (result === undefined || result.length !== 0) {
+      if (result !== undefined && result.length !== 0) {
         return result.map((value, key) => (
           <div className="col-md-4">
             <ProductItem
@@ -111,7 +110,10 @@ class ClothesFootwear extends Component {
 
     return (
       <div>
-        <TitlePage slug={this.props.match.params.slug} name="Clothes Footwear"></TitlePage>
+        <TitlePage
+          slug={this.props.match.params.slug}
+          name="Clothes Footwear"
+        ></TitlePage>
         <div className="main">
           <div className="container">
             <div className="row">
@@ -119,7 +121,7 @@ class ClothesFootwear extends Component {
                 <SidebarLeft
                   changeStatusFilter={() => this.changeStatusFilter()}
                   data={this.props.DbAllProducts.filter(
-                    (item) => item.productPortfolio !== 'digital-goods' 
+                    (item) => item.productPortfolio !== 'digital-goods'
                   )}
                 ></SidebarLeft>
               </div>
@@ -140,6 +142,7 @@ const mapStateToProps = (state, ownProps) => {
     DbAllProducts: state.DbAllProducts,
     GetPriceFilter: state.GetPriceFilter,
     GetDataFilter: state.GetDataFilter,
+    GetTextSearchFilter: state.GetTextSearchFilter,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
