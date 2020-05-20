@@ -95,7 +95,7 @@ function Header(props) {
             </ul>
             <ul className="mini-nav">
               <li className="mini-nav__item">
-                <Link className="mini-nav__link" to="/">
+                <Link className="mini-nav__link" to="/signin">
                   <FontAwesomeIcon icon={faUser} />
                   <span>Login</span>
                 </Link>

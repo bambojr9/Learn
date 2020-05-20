@@ -11,6 +11,8 @@ import ClothesFootwear from './Components/ClothesFootwear/ClothesFootwear';
 import Home from './Components/Home/Home';
 import Sale from './Components/Sale/Sale';
 import ProductsDetail from './Components/ProductsDetail/ProductsDetail';
+import SignupPage from './Components/SignupPage/SignupPage';
+import SigninPage from './Components/SigninPage/SigninPage';
 import EEEE from './Components/Error/EEEE';
 
 function App() {
@@ -37,7 +39,9 @@ function App() {
           path={['/product/:name.:id.html', '/product/:slug/:name.:id.html']}
           component={ProductsDetail}
         ></Route>
-        <Route path="/product" component={ProductsDetail}></Route>
+        <Route path="/product" component={ProductsDetail}/>
+        <Route path="/signup" component={SignupPage}/>
+        <Route path="/signin" component={SigninPage}/>
         <Route path="" component={EEEE} />
       </Switch>
       <Footer></Footer>
