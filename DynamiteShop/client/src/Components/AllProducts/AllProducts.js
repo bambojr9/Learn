@@ -95,6 +95,7 @@ class AllProducts extends Component {
         return result.map((value, key) => (
           <div className="col-md-4">
             <ProductItem
+              id={value.id}
               key={key}
               src={value.src}
               name={value.name}

@@ -95,6 +95,8 @@ class ClothesFootwear extends Component {
         return result.map((value, key) => (
           <div className="col-md-4">
             <ProductItem
+              slug={this.props.match.params.slug}
+              id={value.id}
               key={key}
               src={value.src}
               name={value.name}
