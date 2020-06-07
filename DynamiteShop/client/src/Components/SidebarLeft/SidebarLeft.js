@@ -58,7 +58,11 @@ class SidebarLeft extends Component {
   toggleClass = () => {
     this.props.changeEditStatusClassSidebar();
   };
-
+reset = (value) =>{
+  console.log(value)
+  this.props.GetPriceFilter[0]=0;
+  this.props.GetPriceFilter[1]=2000;  
+}
   render() {
     console.log(this.props.GetTextSearchFilter);
     // let datafilter = this.props.data.filter((value) => {
@@ -154,6 +158,7 @@ class SidebarLeft extends Component {
             <div className="price-filter__slider">
               <Slider
                 onChange={(value) => this.handleValueChange(value)}
+                onClick={(value)=>this.reset(value)}
                 range
                 // value={[0, 100]}
                 defaultValue={[0, 100]}
@@ -177,6 +182,12 @@ class SidebarLeft extends Component {
               className="btn"
             >
               <span>Filter</span>
+            </Link> <Link
+              onClick={() => this.reset()}
+              to="#"
+              className="btn"
+            >
+              <span>Reset</span>
             </Link>
           </div>
           <span onClick={() => this.toggleClass()} className="toggle-sidebar">

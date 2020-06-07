@@ -81,70 +81,66 @@ class NewArrival extends Component {
       .map((e) => data[e]);
 
     return (
-      <div>
-        <p onClick={() => this.log()}> TEstttttttttttt</p>
-
-        <section className="new-arrival">
-          <div className="container">
-            <div className="heading-secondary">
-              <h2 className="heading-secondary__title">NEW ARRIVAL</h2>
-              <div className="heading-secondary__icon">
-                <FontAwesomeIcon icon={faStar} />
-              </div>
+      <section className="new-arrival">
+        <div className="container">
+          <div className="heading-secondary">
+            <h2 className="heading-secondary__title">NEW ARRIVAL</h2>
+            <div className="heading-secondary__icon">
+              <FontAwesomeIcon icon={faStar} />
             </div>
-            <div className="new-arrival__nav">
-              <ul className="nav justify-content-center">
-                {optionFilter.map((value, key) => {
-                  return (
-                    <li
-                      key={key}
-                      onClick={(productPortfolio) =>
-                        this.handleClick(value.productPortfolio)
-                      }
-                      className="nav-item"
-                    >
-                      <NavLink exact to="#" className="nav-link ">
-                        {value.productPortfolio}
-                      </NavLink>
-                    </li>
-                  );
-                })}
-                {/* <li className="nav-item">
+          </div>
+          <div className="new-arrival__nav">
+            <ul className="nav justify-content-center">
+              {optionFilter.map((value, key) => {
+                return (
+                  <li
+                    key={key}
+                    onClick={(productPortfolio) =>
+                      this.handleClick(value.productPortfolio)
+                    }
+                    className="nav-item"
+                  >
+                    <NavLink exact to="#" className="nav-link ">
+                      {value.productPortfolio}
+                    </NavLink>
+                  </li>
+                );
+              })}
+              {/* <li className="nav-item">
 										<NavLink exact to="#" className="nav-link ">
 											SALE
 										</NavLink>
 									</li> */}
-              </ul>
-            </div>
-          </div>{' '}
-          {/* list data  */}
-          <div className="list-products">
-            <div className="container">
-              <Carousel
-                arrows={true}
-                swipeable={true}
-                draggable={true}
-                // showDots={true}
-                responsive={responsive}
-                ssr={true} // means to render carousel on server-side.
-                infinite={true}
-                autoPlay={this.props.deviceType !== 'mobile' ? true : false}
-                autoPlaySpeed={5000}
-                keyBoardControl={true}
-                // customTransition="all .5"
-                transitionDuration={500}
-                containerClass="carousel-container"
-                deviceType={this.props.deviceType}
-                dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px"
-              >
-                {this.listItems()}
-              </Carousel>
-            </div>
+            </ul>
           </div>
-          {/* end list data  */}
-        </section>
-      </div>
+        </div>{' '}
+        {/* list data  */}
+        <div className="list-products">
+          <div className="container">
+            <Carousel
+              arrows={true}
+              swipeable={true}
+              draggable={true}
+              // showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              autoPlay={this.props.deviceType !== 'mobile' ? true : false}
+              autoPlaySpeed={5000}
+              keyBoardControl={true}
+              // customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              deviceType={this.props.deviceType}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {this.listItems()}
+            </Carousel>
+          </div>
+        </div>
+        {/* end list data  */}
+      </section>
     );
   }
 }

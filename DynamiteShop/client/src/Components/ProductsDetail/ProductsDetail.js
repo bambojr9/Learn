@@ -15,6 +15,9 @@ import {
   faInstagram,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+import { actAddToCart, actChangeMessage } from '../../actions/cart';
+// import MessageContainer from '../Cart/MessageContainer';
+import * as Message from '../../constants/Message';
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -51,14 +54,21 @@ class ProductsDetail extends Component {
     return <p>XIn chao</p>;
   };
   toggleBigImage = (idimg) => {
+    console.log(idimg);
     this.setState({ defaultBigImage: false, BigImage: idimg });
   };
 
-  submitForm = (event) => {
-    event.preventDefault();
-    this.setState({
-      isRedirect: true,
-    });
+  // submitForm = (event, product, quantity) => {
+  //   event.preventDefault();
+  //   this.setState({
+  //     isRedirect: true,
+  //   });
+  //   this.props.onAddToCart(product, quantity);
+  //   this.props.onChangeMessage(Message.MSG_ADD_TO_CART_SUCCESS);
+  // };
+  onAddToCart = (product, quantity) => {
+    this.props.onAddToCart(product, quantity);
+    this.props.onChangeMessage(Message.MSG_ADD_TO_CART_SUCCESS);
   };
 
   componentDidMount() {
@@ -118,7 +128,6 @@ class ProductsDetail extends Component {
                     ''
                   )}
                 </div>
-
                 <div className="productDetail__description">
                   <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -166,13 +175,19 @@ class ProductsDetail extends Component {
                       />
                     </div>
                   </div>
-                  <button
-                    onClick={(event) => this.submitForm(event)}
-                    type="submit"
+                  <Link
+                    // onClick={(event, product, quantity) =>
+                    //   this.submitForm(event, value, this.state.count)
+                    // }
+                    // type="submit"
+                    onClick={(product, quantity) =>
+                      this.onAddToCart(value, this.state.count)
+                    }
+                    to="#"
                     className="single_add_to_cart_button"
                   >
                     ADD TO CART
-                  </button>
+                  </Link>
                 </form>
                 <span className="posted_in">
                   Category:
@@ -215,6 +230,7 @@ class ProductsDetail extends Component {
                     />
                   </Link>
                 </div>
+                {/* <MessageContainer></MessageContainer> */}
               </div>
             </div>
           </div>
@@ -224,9 +240,8 @@ class ProductsDetail extends Component {
   };
   render() {
     let count = 1;
-
     if (this.state.isRedirect === true) {
-      console.log('  redirect to products');
+      console.log(' redirect to products');
       return <Redirect to="/all-products">;</Redirect>;
     }
     // console.log(this.props);     in ra tat ca cac props cua component nay
@@ -300,12 +315,19 @@ class ProductsDetail extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     DbAllProducts: state.DbAllProducts,
+    Cart: state.Cart,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchDatabaseAllProducts: () => {
       dispatch(actFetchDataAllProductsRequest());
+    },
+    onAddToCart: (product, quantity) => {
+      dispatch(actAddToCart(product, quantity));
+    },
+    onChangeMessage: (message) => {
+      dispatch(actChangeMessage(message));
     },
   };
 };

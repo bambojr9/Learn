@@ -11,13 +11,39 @@ import {
   faSearch,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import ShowCart from './ShowCart';
 function Header(props) {
   // const [ActiveClass, setActiveClass] = useState(props.isChangeStatusClass);
   function toggleClass() {
     props.changeEditStatusClass();
     // setActiveClass(!ActiveClass);
   }
-
+  let { Cart } = props;
+  const showCartItem = () => {
+    if (Cart.length > 0) {
+      return Cart.map((item, key) => {
+        return <ShowCart key={key} item={item}></ShowCart>;
+      });
+    }
+  };
+  const showTotalAmount = () => {
+    let total = 0;
+    if (Cart.length > 0) {
+      for (let i = 0; i < Cart.length; i++) {
+        total += Cart[i].product.price * Cart[i].quantity;
+      }
+    }
+    return total;
+  };
+  const showTotalQuantity = () => {
+    let total = 0;
+    if (Cart.length > 0) {
+      for (let i = 0; i < Cart.length; i++) {
+        total += Cart[i].quantity;
+      }
+    }
+    return total;
+  };
   return (
     <div className="header">
       <header id="header" className="header-bar">
@@ -106,11 +132,25 @@ function Header(props) {
                   <span>Search</span>
                 </Link>
               </li>
-              <li className="mini-nav__item">
-                <Link className="mini-nav__link" to="/">
+              <li className="mini-nav__item show-cart">
+                <Link className="mini-nav__link" to="/cart">
                   <FontAwesomeIcon icon={faShoppingBasket} />
-                  <span>$999</span>
+                  <span>{showTotalQuantity()}</span>
                 </Link>
+                <ul className="shopping-cart">
+                  {showCartItem()}
+                  <div className="shopping-cart-bottom">
+                    <p className="Subtotal">Subtotal : ${showTotalAmount()} </p>
+                    <div className="buttons">
+                      <Link className="btn" to="/cart">
+                        View Cart
+                      </Link>
+                      <Link className="btn" to="/cart">
+                        Checkout
+                      </Link>
+                    </div>
+                  </div>
+                </ul>
               </li>
             </ul>
           </div>
@@ -135,15 +175,29 @@ function Header(props) {
               <span>Search</span>
             </Link>
           </li>
-          <li className="mini-nav__item">
-            <Link className="mini-nav__link" to="/">
+          <li className="mini-nav__item  show-cart">
+            <Link className="mini-nav__link" to="/cart">
               <FontAwesomeIcon icon={faShoppingBasket} />
-              <span>$999</span>
+              <span>{showTotalQuantity()}</span>
             </Link>
+            <ul className="shopping-cart">
+              {showCartItem()}
+              <div className="shopping-cart-bottom">
+                <p className="Subtotal">Subtotal : ${showTotalAmount()} </p>
+                <div className="buttons">
+                  <Link className="btn" to="/cart">
+                    View Cart
+                  </Link>
+                  <Link className="btn" to="/cart">
+                    Checkout
+                  </Link>
+                </div>
+              </div>
+            </ul>
           </li>
         </div>
         {/* button navigation  */}
-        <span onClick={toggleClass}  className="button-mobile-navigation" to="/">
+        <span onClick={toggleClass} className="button-mobile-navigation" to="/">
           <div className="lines-button"></div>
         </span>
       </div>
@@ -151,7 +205,9 @@ function Header(props) {
       <div
         className={
           'mobile-sticky-header-overlay ' +
-          (props.EditStatusClass.isEditStatusClass ? 'Active' : null) + " "+ ( props.EditStatusClass.isEditStatusClassSIDEBAR ? 'Active' : null)
+          (props.EditStatusClass.isEditStatusClass ? 'Active' : null) +
+          ' ' +
+          (props.EditStatusClass.isEditStatusClassSIDEBAR ? 'Active' : null)
         }
       ></div>
     </div>
@@ -160,6 +216,7 @@ function Header(props) {
 const mapStateToProps = (state, ownProps) => {
   return {
     EditStatusClass: state.EditStatusClass,
+    Cart: state.Cart,
   };
 };
 const mapDispatchToProps = (dispatch, ownProps) => {

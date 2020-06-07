@@ -108,7 +108,6 @@ class AllProducts extends Component {
         return <h1>Product does not Exist</h1>;
       }
     };
-
     return (
       <div>
         <TitlePage name="All-Products"></TitlePage>
@@ -127,7 +126,6 @@ class AllProducts extends Component {
               </div>
             </div>
           </div>
-          <p onClick={() => this.log()}>----------CHECK DATA-----------</p>
         </div>
       </div>
     );

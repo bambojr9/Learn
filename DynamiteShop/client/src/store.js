@@ -4,7 +4,9 @@ import DbFeatureProducts from './Reducer/DbFeatureProducts';
 import DbAllProducts from './Reducer/DbAllProducts';
 import GetPriceFilter from './Reducer/GetPriceFilter';
 import GetDataFilter from './Reducer/GetDataFilter';
-import GetTextSearchFilter from './Reducer/GetTextSearchFilter'
+import GetTextSearchFilter from './Reducer/GetTextSearchFilter';
+import Cart from './Reducer/Cart.js';
+import Message from './Reducer/Message';
 import thunk from 'redux-thunk'
 
 
@@ -15,6 +17,8 @@ const allReducer = combineReducers({
   GetPriceFilter:GetPriceFilter,
   GetDataFilter:GetDataFilter,
   GetTextSearchFilter:GetTextSearchFilter,
+  Cart:Cart,
+  Message:Message,
 });
 
 // store quan li  Reducer  (  quan li  state &  Action)

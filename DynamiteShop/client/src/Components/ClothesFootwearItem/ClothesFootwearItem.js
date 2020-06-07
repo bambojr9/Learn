@@ -134,7 +134,6 @@ class ClothesFootwearItem extends Component {
               </div>
             </div>
           </div>
-          <p onClick={() => this.log()}>----------CHECK DATA-----------</p>
         </div>
       </div>
     );

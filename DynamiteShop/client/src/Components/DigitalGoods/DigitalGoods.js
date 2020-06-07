@@ -12,9 +12,9 @@ class DigitalGoods extends Component {
       statusFilter: true,
     };
   }
-  chuyendoiURL =  (str) =>{
+  chuyendoiURL = (str) => {
     // Chuyển hết sang chữ thường
-    str = str.toLowerCase();     
+    str = str.toLowerCase();
 
     // xóa dấu
     str = str.replace(/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/g, 'a');
@@ -39,7 +39,7 @@ class DigitalGoods extends Component {
 
     // return
     return str;
-}
+  };
   componentDidMount() {
     this.props.fetchDatabaseAllProducts();
   }
@@ -102,7 +102,7 @@ class DigitalGoods extends Component {
   };
 
   render() {
-    console.log(this.props.match.params.name.replace(" ","-"))
+    console.log(this.props.match.params.name.replace(' ', '-'));
     // let result = [];
     // this.props.DbAllProducts.forEach((item) => {
     //   if (
@@ -133,7 +133,10 @@ class DigitalGoods extends Component {
 
     return (
       <div>
-        <TitlePage slug={this.props.match.params.slug} name={this.props.match.params.name}></TitlePage>
+        <TitlePage
+          slug={this.props.match.params.slug}
+          name={this.props.match.params.name}
+        ></TitlePage>
         <div className="main">
           <div className="container">
             <div className="row">
@@ -141,7 +144,8 @@ class DigitalGoods extends Component {
                 <SidebarLeft
                   changeStatusFilter={() => this.changeStatusFilter()}
                   data={this.props.DbAllProducts.filter(
-                    (item) => item.productPortfolio === this.props.match.params.name
+                    (item) =>
+                      item.productPortfolio === this.props.match.params.name
                   )}
                 ></SidebarLeft>
               </div>
@@ -151,7 +155,6 @@ class DigitalGoods extends Component {
               </div>
             </div>
           </div>
-          <p onClick={() => this.log()}>----------CHECK DATA-----------</p>
         </div>
       </div>
     );

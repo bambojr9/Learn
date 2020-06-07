@@ -74,12 +74,12 @@ class ClothesFootwear extends Component {
   // };
 
   render() {
-    let datafilter = this.props.DbAllProducts.filter((value) => {
+    let detailer = this.props.DbAllProducts.filter((value) => {
       return value.name.indexOf(this.props.GetTextSearchFilter) !== -1;
     });
     // console.log(datafilter);
     let result = [];
-    datafilter
+    detailer
       .filter((item) => item.productPortfolio !== 'digital-goods')
       .forEach((item) => {
         if (
@@ -133,7 +133,6 @@ class ClothesFootwear extends Component {
               </div>
             </div>
           </div>
-          <p onClick={() => this.log()}>----------CHECK DATA-----------</p>
         </div>
       </div>
     );
