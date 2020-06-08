@@ -153,10 +153,14 @@
 @media (min-width: 576px) and (max-width: 1199.98px) {
   .sidebar.Active {
     width: 40rem;
+    overflow-y: auto;
     .toggle-sidebar {
-      left: 40rem;
+      left: 35rem;
       top: 40%;
       transition: all 0.5s;
+    }
+    .price-filter__slider {
+      width: 90%;
     }
   }
 }

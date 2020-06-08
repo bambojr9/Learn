@@ -343,10 +343,11 @@
   z-index: 99;
   padding: 1.5rem 2rem;
   background: #fff;
+  top: 3rem;
   right: 0;
   visibility: hidden;
   opacity: 0;
-  width: 25rem;
+  width: 26rem;
   &__item {
     display: flex;
     margin-bottom: 2rem;

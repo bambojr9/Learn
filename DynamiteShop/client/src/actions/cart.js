@@ -26,3 +26,9 @@ export const actUpdateProductInCart = (product, quantity) => {
     quantity,
   };
 };
+export const actResetCart = (product) => {
+  return {
+    type: 'RESET_CART',
+    product,
+  };
+};

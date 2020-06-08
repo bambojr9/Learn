@@ -32,6 +32,11 @@ const Cart = (state = ProductsCartInitialState, action) => {
       localStorage.setItem('CART', JSON.stringify(state));
       return [...state];
 
+    case 'RESET_CART':
+      state = [];
+      localStorage.setItem('CART', JSON.stringify(state));
+      return [...state];
+
     default:
       return [...state];
   }

@@ -24,6 +24,8 @@ function Header(props) {
       return Cart.map((item, key) => {
         return <ShowCart key={key} item={item}></ShowCart>;
       });
+    } else {
+      return <p>Khong co san pham nao trong gio hang</p>;
     }
   };
   const showTotalAmount = () => {
