@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import logo from '../../assets/img/logo/logo.jpg';
 import mobileLogo from '../../assets/img/logo/mobile-logo.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,15 +8,19 @@ import {
   faClock,
   faMobileAlt,
   faShoppingBasket,
-  faSearch,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import ShowCart from './ShowCart';
 function Header(props) {
+  let history = useHistory();
   // const [ActiveClass, setActiveClass] = useState(props.isChangeStatusClass);
   function toggleClass() {
     props.changeEditStatusClass();
     // setActiveClass(!ActiveClass);
+  }
+  function isLogout() {
+    localStorage.removeItem('login');
+    history.push('/');
   }
   let { Cart } = props;
   const showCartItem = () => {
@@ -25,7 +29,7 @@ function Header(props) {
         return <ShowCart key={key} item={item}></ShowCart>;
       });
     } else {
-      return <p>Khong co san pham nao trong gio hang</p>;
+      return <p>No products in the cart.</p>;
     }
   };
   const showTotalAmount = () => {
@@ -123,17 +127,23 @@ function Header(props) {
             </ul>
             <ul className="mini-nav">
               <li className="mini-nav__item">
-                <Link className="mini-nav__link" to="/signin">
-                  <FontAwesomeIcon icon={faUser} />
-                  <span>Login</span>
-                </Link>
+                {localStorage.getItem('login') ? (
+                  <Link
+                    onClick={() => isLogout()}
+                    className="mini-nav__link"
+                    to="#"
+                  >
+                    <FontAwesomeIcon icon={faUser} />
+                    <span>Logout</span>
+                  </Link>
+                ) : (
+                  <Link className="mini-nav__link" to="/signin">
+                    <FontAwesomeIcon icon={faUser} />
+                    <span>Login/Register</span>
+                  </Link>
+                )}
               </li>
-              <li className="mini-nav__item">
-                <Link className="mini-nav__link" to="/">
-                  <FontAwesomeIcon icon={faSearch} />
-                  <span>Search</span>
-                </Link>
-              </li>
+
               <li className="mini-nav__item show-cart">
                 <Link className="mini-nav__link" to="/cart">
                   <FontAwesomeIcon icon={faShoppingBasket} />
@@ -158,7 +168,7 @@ function Header(props) {
           </div>
         </nav>
       </header>
-
+      {/* mobile-navbar  */}
       <div className="mobile-header-bar d-xl-none fixed-top">
         <div className="mobile-branding">
           <Link className="mobile-branding__logo" to="/">
@@ -167,14 +177,9 @@ function Header(props) {
         </div>
         <div className="mini-nav">
           <li className="mini-nav__item">
-            <Link className="mini-nav__link" to="/">
-              <span>Something...</span>
-            </Link>
-          </li>
-          <li className="mini-nav__item">
-            <Link className="mini-nav__link" to="/">
-              <FontAwesomeIcon icon={faSearch} />
-              <span>Search</span>
+            <Link className="mini-nav__link" to="/signin">
+              <FontAwesomeIcon icon={faUser} />
+              <span>Login/Register</span>
             </Link>
           </li>
           <li className="mini-nav__item  show-cart">
@@ -203,6 +208,7 @@ function Header(props) {
           <div className="lines-button"></div>
         </span>
       </div>
+      {/*END mobile-navbar  */}
       {/* overlay  */}
       <div
         className={

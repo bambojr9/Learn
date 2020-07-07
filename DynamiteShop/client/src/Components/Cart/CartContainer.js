@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CartItem from './CartItem';
-import * as Message from '../../constants/Message';
+// import * as Message from '../../constants/Message';
 import { actAddToCart, actResetCart } from '../../actions/cart';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 class CartContainer extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +27,17 @@ class CartContainer extends Component {
     });
     // console.log(fields);
   }
-
+  notifySuccess = () => {
+    toast.success('🦄 Purchase successful!', {
+      position: 'top-right',
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
   handleSubmitForm(e) {
     e.preventDefault();
     if (this.validateForm()) {
@@ -35,7 +47,12 @@ class CartContainer extends Component {
       this.setState({ fields: fields });
       //reset cart
       this.props.onResetCart();
-      alert('Form submitted');
+      // alert('Form submitted');
+      this.notifySuccess();
+      const {
+        history: { push },
+      } = this.props;
+      setTimeout(() => push('/all-products'), 1500);
     }
   }
 
@@ -108,13 +125,37 @@ class CartContainer extends Component {
   // //validate
 
   render() {
+    //notify
+    // const notify = () => {
+    //   toast('🦄 Success!', {
+    //     position: 'top-right',
+    //     autoClose: 2000,
+    //     hideProgressBar: false,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //   });
+    // };
     //showItem product in cart
     const showCartItemTest = () => {
       if (this.props.Cart.length > 0) {
         return this.props.Cart.map((item, key) => {
           return <CartItem key={key} item={item}></CartItem>;
         });
-      } else return <li>Khong co san pham nao trong gio hang</li>;
+      } else
+        return (
+          <li
+            style={{
+              backgroundColor: '#f6f6f6',
+              fontSize: '3rem',
+              borderTop: '2px solid #fff',
+              fontWeight: '500',
+            }}
+          >
+            No products in the cart.
+          </li>
+        );
     };
 
     return (
@@ -122,7 +163,7 @@ class CartContainer extends Component {
         <div className="container">
           <h2 className="cart-products__title">Cart</h2>
           <div className="row">
-            <div className="col-md-9">
+            <div className="col-xl-9">
               <div className="cart-products">
                 <div className="cart-products__inner">
                   <ul className="cart-products__products">
@@ -131,7 +172,7 @@ class CartContainer extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-3">
+            <div className="col-xl-3">
               <form
                 method="POST"
                 name="userInfoForm"
@@ -225,10 +266,12 @@ class CartContainer extends Component {
                       Proceed to ordering
                     </button> */}
                     <input
+                      // onClick={notify}
                       type="submit"
                       className="button cart__submit btn-block"
                       value="Proceed to ordering"
                     />
+                    <ToastContainer />
                   </div>
                 </div>
               </form>

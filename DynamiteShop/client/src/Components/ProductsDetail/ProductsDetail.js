@@ -18,6 +18,9 @@ import {
 import { actAddToCart, actChangeMessage } from '../../actions/cart';
 // import MessageContainer from '../Cart/MessageContainer';
 import * as Message from '../../constants/Message';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -41,6 +44,7 @@ const responsive = {
     items: 1,
   },
 };
+
 class ProductsDetail extends Component {
   constructor(props) {
     super(props);
@@ -66,9 +70,22 @@ class ProductsDetail extends Component {
   //   this.props.onAddToCart(product, quantity);
   //   this.props.onChangeMessage(Message.MSG_ADD_TO_CART_SUCCESS);
   // };
+  notifySuccess = () => {
+    toast.info('🦄 Add to cart', {
+      position: 'top-right',
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
   onAddToCart = (product, quantity) => {
     this.props.onAddToCart(product, quantity);
     this.props.onChangeMessage(Message.MSG_ADD_TO_CART_SUCCESS);
+    this.notifySuccess();
+  
   };
 
   componentDidMount() {
@@ -188,6 +205,7 @@ class ProductsDetail extends Component {
                   >
                     ADD TO CART
                   </Link>
+                  <ToastContainer />
                 </form>
                 <span className="posted_in">
                   Category:
