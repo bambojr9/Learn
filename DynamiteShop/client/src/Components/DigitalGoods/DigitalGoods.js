@@ -43,9 +43,9 @@ class DigitalGoods extends Component {
   componentDidMount() {
     this.props.fetchDatabaseAllProducts();
   }
-  log = () => {
-    console.log(' \n ' + JSON.stringify(this.props.DbAllProducts) + ' \n');
-  };
+  // log = () => {
+  //   console.log(' \n ' + JSON.stringify(this.props.DbAllProducts) + ' \n');
+  // };
   changeStatusFilter = () => {
     this.setState({
       // statusFilter: !this.state.statusFilter,
@@ -102,7 +102,7 @@ class DigitalGoods extends Component {
   };
 
   render() {
-    console.log(this.props.match.params.name.replace(' ', '-'));
+    // console.log(this.props.match.params.name.replace(' ', '-'));
     // let result = [];
     // this.props.DbAllProducts.forEach((item) => {
     //   if (

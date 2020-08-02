@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { CheckBox } from './Checkbox';
+// import { CheckBox } from './Checkbox';
 import data from './data.json';
+import UseEffect1 from './components/ReactHooks/UseEffects/UseEffect1';
 
 export default class App extends Component {
   constructor(props) {
@@ -11,55 +12,55 @@ export default class App extends Component {
   }
 
   render() {
-    let { palette } = this.state;
+    // let { palette } = this.state;
 
-    const handleAllChecked = (event) => {
-      palette.map((item) => {
-        return (item.isChecked = event.target.checked);
-      });
-      this.setState({ palette: palette });
-      console.log(
-        palette.map((e) => e['color']) +
-          '\n so 1 \n' +
-          palette
-            .map((e) => e['color'])
-            .map((e, i, final) => final.indexOf(e) === i && i) +
-          '\n so 2 \n' +
-          palette
-            .map((e) => e['color'])
-            .map((e, i, final) => final.indexOf(e) === i && i)
-            .filter((e) => palette[e]) +
-          '\n so 3 \n' +
-          JSON.stringify(
-            palette
-              .map((e) => e['color'])
-              .map((e, i, final) => final.indexOf(e) === i && i)
-              .filter((e) => palette[e])
-              .map((e) => palette[e])
-          )
-      );
-    };
+    // const handleAllChecked = (event) => {
+    //   palette.map((item) => {
+    //     return (item.isChecked = event.target.checked);
+    //   });
+    //   this.setState({ palette: palette });
+    //   console.log(
+    //     palette.map((e) => e['color']) +
+    //       '\n so 1 \n' +
+    //       palette
+    //         .map((e) => e['color'])
+    //         .map((e, i, final) => final.indexOf(e) === i && i) +
+    //       '\n so 2 \n' +
+    //       palette
+    //         .map((e) => e['color'])
+    //         .map((e, i, final) => final.indexOf(e) === i && i)
+    //         .filter((e) => palette[e]) +
+    //       '\n so 3 \n' +
+    //       JSON.stringify(
+    //         palette
+    //           .map((e) => e['color'])
+    //           .map((e, i, final) => final.indexOf(e) === i && i)
+    //           .filter((e) => palette[e])
+    //           .map((e) => palette[e])
+    //       )
+    //   );
+    // };
 
-    const handleCheck = (event) => {
-      palette
-        .filter((item) => item.color === event.target.value)
-        .map((item) => {
-          return (item.isChecked = event.target.checked);
-        });
-      this.setState({ palette: palette });
-    };
+    // const handleCheck = (event) => {
+    //   palette
+    //     .filter((item) => item.color === event.target.value)
+    //     .map((item) => {
+    //       return (item.isChecked = event.target.checked);
+    //     });
+    //   this.setState({ palette: palette });
+    // };
 
-    const optionFilter = palette
-      .map((e) => e['color'])
-      // store the keys of the unique objects
-      .map((e, i, final) => final.indexOf(e) === i && i)
-      // eliminate the dead keys & store unique objects
-      .filter((e) => palette[e])
-      .map((e) => palette[e]);
+    // const optionFilter = palette
+    //   .map((e) => e['color'])
+    //   // store the keys of the unique objects
+    //   .map((e, i, final) => final.indexOf(e) === i && i)
+    //   // eliminate the dead keys & store unique objects
+    //   .filter((e) => palette[e])
+    //   .map((e) => palette[e]);
 
     return (
       <div className="App" style={{ padding: '100px' }}>
-        <h1> Check & Uncheck CLASS </h1>
+        {/* <h1> Check & Uncheck CLASS </h1>
         <div>
           <input
             type="checkbox"
@@ -82,7 +83,8 @@ export default class App extends Component {
                 <strong>{item.color}</strong>
               </div>
             );
-          })}
+          })} */}
+        <UseEffect1></UseEffect1>
       </div>
     );
   }

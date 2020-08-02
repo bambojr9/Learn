@@ -43,9 +43,9 @@ class FeaturedProducts extends Component {
   componentDidMount() {
     this.props.fetchDatabaseFeaturedProducts();
   }
-  log = () => {
-    console.log(' \n ' + JSON.stringify(this.props.DbFeatureProducts) + ' \n');
-  };
+  // log = () => {
+  //   console.log(' \n ' + JSON.stringify(this.props.DbFeatureProducts) + ' \n');
+  // };
 
   showAllProducts = () => {
     if (this.props.DbFeatureProducts !== null) {

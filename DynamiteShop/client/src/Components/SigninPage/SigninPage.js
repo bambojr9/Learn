@@ -32,6 +32,13 @@ const tailLayout = {
 };
 
 export default class SigninPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      errors: {},
+    };
+    // this.handleSubmitForm = this.handleSubmitForm.bind(this);
+  }
   notifySuccess = () => {
     toast.success('🦄  successfully logged in!', {
       position: 'top-right',
@@ -65,7 +72,7 @@ export default class SigninPage extends Component {
 
               return setTimeout(() => that.props.history.push('/Home'), 1000);
             } else {
-              return console.log('check email ,  password');
+              return;
             }
           });
         })
@@ -116,6 +123,7 @@ export default class SigninPage extends Component {
           ]}
         >
           <Input.Password />
+          {/* <div className="errorMsg">{this.state.errors}</div> */}
         </Form.Item>
 
         <Form.Item {...tailLayout} name="remember" valuePropName="checked">

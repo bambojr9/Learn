@@ -177,10 +177,21 @@ function Header(props) {
         </div>
         <div className="mini-nav">
           <li className="mini-nav__item">
-            <Link className="mini-nav__link" to="/signin">
-              <FontAwesomeIcon icon={faUser} />
-              <span>Login/Register</span>
-            </Link>
+            {localStorage.getItem('login') ? (
+              <Link
+                onClick={() => isLogout()}
+                className="mini-nav__link"
+                to="#"
+              >
+                <FontAwesomeIcon icon={faUser} />
+                <span>Logout</span>
+              </Link>
+            ) : (
+              <Link className="mini-nav__link" to="/signin">
+                <FontAwesomeIcon icon={faUser} />
+                <span>Login/Register</span>
+              </Link>
+            )}
           </li>
           <li className="mini-nav__item  show-cart">
             <Link className="mini-nav__link" to="/cart">

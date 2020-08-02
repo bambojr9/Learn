@@ -59,12 +59,13 @@ class SidebarLeft extends Component {
     this.props.changeEditStatusClassSidebar();
   };
 reset = (value) =>{
-  console.log(value)
+  // console.log(value)
   this.props.GetPriceFilter[0]=0;
   this.props.GetPriceFilter[1]=2000;  
 }
   render() {
-    console.log(this.props.GetTextSearchFilter);
+    // console.log(this.props.GetTextSearchFilter);
+    
     // let datafilter = this.props.data.filter((value) => {
     //   return value.name.indexOf(this.props.GetTextSearchFilter) !== -1;
     // });

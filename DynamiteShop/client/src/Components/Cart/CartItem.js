@@ -59,14 +59,16 @@ class CartItem extends Component {
     return (
       <li className="cart-products__product">
         <div className="cart-products__img">
-          <Link to={
+          <Link
+            to={
               '/product/' +
               (this.props.slug !== undefined ? this.props.slug + '/' : '') +
               chuyendoiURL(item.product.name) +
               '.' +
               item.product.id +
               '.html'
-            }>
+            }
+          >
             <img
               src={require('../../assets/img/products/' + item.product.src[1])}
               alt=""
@@ -75,19 +77,25 @@ class CartItem extends Component {
         </div>
         <div className="cart-products__content">
           <div className="cart-products__description">
-            <Link to={
-              '/product/' +
-              (this.props.slug !== undefined ? this.props.slug + '/' : '') +
-              chuyendoiURL(item.product.name) +
-              '.' +
-              item.product.id +
-              '.html'
-            } className="cart-products__name">
+            <Link
+              to={
+                '/product/' +
+                (this.props.slug !== undefined ? this.props.slug + '/' : '') +
+                chuyendoiURL(item.product.name) +
+                '.' +
+                item.product.id +
+                '.html'
+              }
+              className="cart-products__name"
+            >
               {item.product.name}
             </Link>
             <span className="cart-products__categories">
               Category:
-              <Link  to={'/product-category/' + item.product.productPortfolio} className="cart-products__tags">
+              <Link
+                to={'/product-category/' + item.product.productPortfolio}
+                className="cart-products__tags"
+              >
                 {item.product.productPortfolio}
               </Link>
             </span>

@@ -15,9 +15,9 @@ class AllProducts extends Component {
   componentDidMount() {
     this.props.fetchDatabaseAllProducts();
   }
-  log = () => {
-    console.log(' \n ' + JSON.stringify(this.props.DbAllProducts) + ' \n');
-  };
+  // log = () => {
+  //   console.log(' \n ' + JSON.stringify(this.props.DbAllProducts) + ' \n');
+  // };
   changeStatusFilter = () => {
     this.setState({
       // statusFilter: !this.state.statusFilter,
@@ -92,11 +92,11 @@ class AllProducts extends Component {
 
     const showAllProducts = () => {
       if (result !== undefined && result.length !== 0) {
-        return result.map((value, key) => (
+        return result.map((value, index) => (
           <div className="col-md-4">
             <ProductItem
               id={value.id}
-              key={key}
+              key={index}
               src={value.src}
               name={value.name}
               price={value.price}

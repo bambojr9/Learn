@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import { connect } from 'react-redux';
 import { actFetchDataAllProductsRequest } from '../../actions/actFetchData';
 import TitlePage from '../TitlePage/TitlePage';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import {
@@ -58,7 +58,7 @@ class ProductsDetail extends Component {
     return <p>XIn chao</p>;
   };
   toggleBigImage = (idimg) => {
-    console.log(idimg);
+    // console.log(idimg);
     this.setState({ defaultBigImage: false, BigImage: idimg });
   };
 
@@ -85,7 +85,6 @@ class ProductsDetail extends Component {
     this.props.onAddToCart(product, quantity);
     this.props.onChangeMessage(Message.MSG_ADD_TO_CART_SUCCESS);
     this.notifySuccess();
-  
   };
 
   componentDidMount() {
@@ -258,10 +257,10 @@ class ProductsDetail extends Component {
   };
   render() {
     let count = 1;
-    if (this.state.isRedirect === true) {
-      console.log(' redirect to products');
-      return <Redirect to="/all-products">;</Redirect>;
-    }
+    // if (this.state.isRedirect === true) {
+    //   console.log(' redirect to products');
+    //   return <Redirect to="/all-products">;</Redirect>;
+    // }
     // console.log(this.props);     in ra tat ca cac props cua component nay
     // console.log(this.props.match.params.id);
     // console.log(this.props.match.params.name);
