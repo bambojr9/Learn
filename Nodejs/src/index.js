@@ -50,7 +50,7 @@ app.get('/search', function (req, res) {
 app.post('/search', function (req, res) {
   console.log('------------')
   console.log(req.body)
-  console.log('------------')h
+    console.log('------------')
   res.render('search');
 });
 app.listen(port, () => {
