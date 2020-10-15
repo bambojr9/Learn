@@ -5,6 +5,8 @@ const port = 3000
 var morgan = require('morgan')
 var exphbs  = require('express-handlebars');
 const helpers = require("./resources/lib/helpers");
+const route = require('./routes')
+
 
 app.use(express.static(path.join(__dirname,'/public')));
 
@@ -34,25 +36,12 @@ app.engine('.hbs', exphbs({
 }));
 app.set('view engine', '.hbs');
 //end Template engine
+  // app.get('/news', function (req, res) {
+  //   res.render('news');
+  // });
+//routes init
+route(app);
 
-app.get('/', function (req, res) {
-  
-  res.render('home');
-});
-app.get('/news', function (req, res) {
-
-  res.render('new');
-});
-app.get('/search', function (req, res) {
-  console.log(req.query)
-  res.render('search');
-});
-app.post('/search', function (req, res) {
-  console.log('------------')
-  console.log(req.body)
-    console.log('------------')
-  res.render('search');
-});
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
