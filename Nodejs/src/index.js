@@ -8,6 +8,10 @@ const helpers = require("./resources/lib/helpers");
 
 app.use(express.static(path.join(__dirname,'/public')));
 
+// middleware express
+app.use(express.urlencoded());
+app.use(express.json());
+
 // HTTP logger
 app.use(morgan('combined'))
 
@@ -32,10 +36,23 @@ app.set('view engine', '.hbs');
 //end Template engine
 
 app.get('/', function (req, res) {
-  console.log(`x:${res}`)
+  
   res.render('home');
 });
+app.get('/news', function (req, res) {
 
+  res.render('new');
+});
+app.get('/search', function (req, res) {
+  console.log(req.query)
+  res.render('search');
+});
+app.post('/search', function (req, res) {
+  console.log('------------')
+  console.log(req.body)
+  console.log('------------')h
+  res.render('search');
+});
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
