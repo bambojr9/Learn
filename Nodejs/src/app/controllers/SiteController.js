@@ -7,7 +7,7 @@ class SiteController {
     Course.find({}, function (err, courses) {
       // docs.forEach
       if (!err) {
-        res.json(courses);
+        res.json({ data: courses });
       } else {
         res.status(400).json({ error: 'Error!!!' });
       }
