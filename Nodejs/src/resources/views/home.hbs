@@ -1,14 +1,19 @@
 <h1>Home Page</h1>
 <div class="container">
   <div class="row">
+  
+  {{#each courses}}
     <div class="col-sm">
-      One of three columns
+  <div class="card" style="width: 18rem;">
+  <img src="{{cou}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">{{this.desciption}}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
     </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
+   
+  {{/each}}
   </div>  
 </div>

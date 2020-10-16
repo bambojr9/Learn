@@ -2,16 +2,17 @@ const Course = require('../models/Course');
 
 class SiteController {
   // [GET] /home
-  index(req, res) {
-    // res.render('home');
-    Course.find({}, function (err, courses) {
-      // docs.forEach
-      if (!err) {
-        res.json({ data: courses });
-      } else {
-        res.status(400).json({ error: 'Error!!!' });
-      }
-    });
+  index(req, res, next) {
+    // Course.find({}, function (err, courses) {
+    //   if (!err) {
+    //     res.json({ data: courses });
+    //   } else {
+    //     next(err);
+    //   }
+    // });
+    Course.find({})
+      .then((courses) => res.render('home', { courses }))
+      .catch(next);
   }
   // [GET] /search
   search(req, res) {
