@@ -1,20 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-
+import React from 'react';
 import { Card } from 'react-bootstrap';
 
-const Test2 = () => {
+const Test2 = (props) => {
+  const { avatar, email, first_name, last_name } = props;
   return (
     <div>
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="holder.js/100px180" />
+        <Card.Img variant="top" src={avatar ? avatar : 'holder.js/100px180 '} />
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </Card.Text>
-          <a variant="primary">Go somewhere</a>
+          <Card.Title>email: {email}</Card.Title>
+          <Card.Text>first_name : {first_name}</Card.Text>
+          <Card.Text>last_name : {last_name}</Card.Text>
+          <a href="/" variant="primary">
+            Go somewhere
+          </a>
         </Card.Body>
       </Card>
     </div>
