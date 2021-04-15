@@ -1,13 +1,10 @@
 // import React from 'react';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { BASE_URL } from '../../services/base-http.service';
-import { useRouter } from 'next/router';
 import { Button } from 'antd';
+import React from 'react';
 import { useAuth } from '../../context/auth';
+import { BASE_URL } from '../../services/base-http.service';
 
 const HomePage = () => {
-  const router = useRouter();
   const { logout } = useAuth();
 
   return (

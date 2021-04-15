@@ -1,9 +1,8 @@
 import { Checkbox } from 'antd';
+import Link from 'next/link';
 import React, { useRef } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import Link from 'next/link';
-import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import AuthService from '../../../services/auth.service';
 interface IFormInput {
   name: string;

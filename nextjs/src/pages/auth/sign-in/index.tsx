@@ -2,8 +2,8 @@ import { Checkbox } from 'antd';
 import Link from 'next/link';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { toast, ToastContainer } from 'react-toastify';
 import AuthService from '../../../services/auth.service';
-import { ToastContainer, toast } from 'react-toastify';
 interface IFormInput {
   email: string;
   password: string;
@@ -14,8 +14,7 @@ const SignInPage = () => {
   const onSubmit = async (data: IFormInput) => {
     try {
       const response = await AuthService.signIn(data.email, data.password);
-      console.log(response);
-
+      console.log('response SignIn:', response);
       toast.success('🦄 You are successfully logged in !', {
         position: 'top-right',
         autoClose: 3333,

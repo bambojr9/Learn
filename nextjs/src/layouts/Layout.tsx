@@ -1,13 +1,9 @@
 import Head from 'next/head';
-import styles from './layouts.module.scss';
-
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import api from '../services/api';
-import Cookies from 'cookies';
-import useAuth from '../hooks/useAuth';
-import Router from 'next/router';
+import styles from './layouts.module.scss';
+
 type Props = {
   children?: ReactNode;
   title?: string;
@@ -17,10 +13,6 @@ export const Layout = ({
   children,
   title = 'This is the default title',
 }: Props) => {
-  const onLogout = async () => {
-    try {
-    } catch (error) {}
-  };
   return (
     <div>
       <Head>
@@ -29,7 +21,7 @@ export const Layout = ({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <body>
-        <Header onLogout={onLogout} />
+        <Header />
 
         <div> {children} </div>
         <Footer />
