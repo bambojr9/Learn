@@ -11,8 +11,11 @@ const composeEnhancers =
     : compose;
 const configureStore = () => {
   const middlewares = [];
-  const enhancers = [applyMiddleware(...middlewares)];
-  const store = createStore(rootReducers, composeEnhancers(enhancers));
+  const enhancer = composeEnhancers(
+    applyMiddleware(...middlewares)
+    // other store enhancers if any
+  );
+  const store = createStore(rootReducers, enhancer);
   return store;
 };
 export default configureStore;
